@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table OLAP_SYNTAX$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OLAP_SYNTAX$" MODIFY ("REF_ROLE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_SYNTAX$" MODIFY ("OWNER_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_SYNTAX$" MODIFY ("OWNER_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_SYNTAX$" MODIFY ("ORDER_NUM" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_SYNTAX$" MODIFY ("SYNTAX_CLOB" NOT NULL ENABLE);

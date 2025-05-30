@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table APPLY$_VIRTUAL_OBJ_CONS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."APPLY$_VIRTUAL_OBJ_CONS" MODIFY ("OWNER" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."APPLY$_VIRTUAL_OBJ_CONS" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."APPLY$_VIRTUAL_OBJ_CONS" MODIFY ("POWNER" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."APPLY$_VIRTUAL_OBJ_CONS" MODIFY ("PNAME" NOT NULL ENABLE);

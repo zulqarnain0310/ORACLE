@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table WRH$_WAITSTAT_BL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRH$_WAITSTAT_BL" SHARING=METADATA 
+   (	"SNAP_ID" NUMBER, 
+	"DBID" NUMBER, 
+	"INSTANCE_NUMBER" NUMBER, 
+	"CLASS" VARCHAR2(18 BYTE), 
+	"WAIT_COUNT" NUMBER, 
+	"TIME" NUMBER, 
+	"CON_DBID" NUMBER, 
+	"PER_PDB" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

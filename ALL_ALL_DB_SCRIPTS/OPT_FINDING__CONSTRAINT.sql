@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table OPT_FINDING$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OPT_FINDING$" MODIFY ("F_OWN#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING$" MODIFY ("F_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING$" MODIFY ("TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING$" MODIFY ("REASON" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING$" MODIFY ("CTIME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING$" MODIFY ("TAB_CNT" NOT NULL ENABLE);

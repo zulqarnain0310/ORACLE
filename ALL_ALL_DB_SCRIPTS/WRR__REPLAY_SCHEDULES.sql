@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_REPLAY_SCHEDULES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_REPLAY_SCHEDULES" SHARING=METADATA 
+   (	"SCHEDULE_NAME" VARCHAR2(128 BYTE), 
+	"DIRECTORY" VARCHAR2(128 BYTE), 
+	"STATUS" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

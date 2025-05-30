@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table SYS_FBA_FA
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SYS_FBA_FA" SHARING=METADATA 
+   (	"FANAME" VARCHAR2(255 BYTE), 
+	"FA#" NUMBER, 
+	"RETENTION" NUMBER, 
+	"CREATESCN" NUMBER, 
+	"PURGESCN" NUMBER, 
+	"FLAGS" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"OWNERNAME" VARCHAR2(255 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

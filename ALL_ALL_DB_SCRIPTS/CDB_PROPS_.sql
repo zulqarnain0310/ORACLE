@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table CDB_PROPS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CDB_PROPS$" SHARING=METADATA 
+   (	"CON_UID#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"VALUE$" VARCHAR2(4000 BYTE), 
+	"COMMENT$" VARCHAR2(4000 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(4000 BYTE), 
+	"SPARE4" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

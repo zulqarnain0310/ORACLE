@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table DIR$REASON_STRINGS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DIR$REASON_STRINGS" SHARING=METADATA 
+   (	"REASON_ID" NUMBER, 
+	"REASON" VARCHAR2(4000 BYTE), 
+	"SPAREN1" NUMBER, 
+	"SPAREN2" NUMBER, 
+	"SPAREVC1" VARCHAR2(4000 BYTE), 
+	"SPAREVC2" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

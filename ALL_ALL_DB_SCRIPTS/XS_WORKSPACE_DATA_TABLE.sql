@@ -1,0 +1,3 @@
+REM INSERTING into SYS.XS$WORKSPACE
+SET DEFINE OFF;
+Insert into SYS.XS$WORKSPACE (NAME,TYPE,DESCRIPTION) values ('XS',0,'System workspace');

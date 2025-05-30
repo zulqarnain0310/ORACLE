@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table AQ$_E_QUEUE_PARTITION_MAP
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."AQ$_E_QUEUE_PARTITION_MAP" SHARING=METADATA 
+   (	"QUEUE" NUMBER, 
+	"SHARD" NUMBER, 
+	"PRIORITY" NUMBER, 
+	"SUBSHARD" NUMBER, 
+	"EXSHARD" NUMBER, 
+	"EXSUBSHARD" NUMBER, 
+	"PARTITION#" NUMBER, 
+	"PARTNAME" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table DBFS_HS$_STOREPROPERTIES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS_HS$_STOREPROPERTIES" SHARING=METADATA 
+   (	"STOREID" NUMBER, 
+	"PROPERTYNAME" VARCHAR2(256 BYTE), 
+	"PROPERTYVALUE" VARCHAR2(256 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

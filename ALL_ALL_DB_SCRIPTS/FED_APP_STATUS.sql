@@ -1,0 +1,18 @@
+--------------------------------------------------------
+--  DDL for Table FED$APP$STATUS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."FED$APP$STATUS" SHARING=METADATA 
+   (	"APPID#" NUMBER, 
+	"LASTSEQ#" NUMBER, 
+	"ERRORSEQ#" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" VARCHAR2(1000 BYTE), 
+	"SPARE5" VARCHAR2(1000 BYTE), 
+	"SPARE6" DATE, 
+	"FLAG" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

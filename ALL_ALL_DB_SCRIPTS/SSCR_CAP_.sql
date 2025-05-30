@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  DDL for Table SSCR_CAP$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SSCR_CAP$" SHARING=METADATA 
+   (	"DB_NAME" VARCHAR2(4000 BYTE), 
+	"INST_NAME" VARCHAR2(4000 BYTE), 
+	"INST_ID" NUMBER, 
+	"SID" NUMBER, 
+	"SERIAL#" NUMBER, 
+	"USER_ID" NUMBER, 
+	"SCHEMA_ID" NUMBER, 
+	"SEQ#" NUMBER, 
+	"CMODE" NUMBER, 
+	"SCOPE" NUMBER, 
+	"FORMAT" NUMBER, 
+	"DIRECTORY" VARCHAR2(128 BYTE), 
+	"LOCATOR" RAW(64), 
+	"CAPTURE_TIME" TIMESTAMP (6)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table REGISTRY$UPG_RESUME
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."REGISTRY$UPG_RESUME" SHARING=METADATA 
+   (	"VERSION" VARCHAR2(30 BYTE), 
+	"PHASENO" NUMBER, 
+	"ERRORCNT" NUMBER, 
+	"STARTTIME" TIMESTAMP (6), 
+	"ENDTIME" TIMESTAMP (6)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

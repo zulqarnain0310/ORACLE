@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table WRI$_STS_GRANULES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRI$_STS_GRANULES" SHARING=METADATA 
+   (	"SCRIPT_ID" NUMBER, 
+	"SQLSET_NAME" VARCHAR2(30 BYTE), 
+	"SQLSET_OWNER" VARCHAR2(128 BYTE), 
+	"START_SQL_SEQ" NUMBER, 
+	"END_SQL_SEQ" NUMBER, 
+	"SERVER_ID" NUMBER, 
+	"GRANULE_NUMBER" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

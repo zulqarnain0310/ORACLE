@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table DBFS$_STORES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS$_STORES" SHARING=METADATA 
+   (	"S_OWNER" VARCHAR2(128 BYTE), 
+	"S_NAME" VARCHAR2(32 BYTE), 
+	"P_NAME" VARCHAR2(32 BYTE), 
+	"P_PKG" VARCHAR2(128 BYTE), 
+	"CREATED" TIMESTAMP (6)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT SELECT ON "SYS"."DBFS$_STORES" TO "DBFS_ROLE";

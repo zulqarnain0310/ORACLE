@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table HCS_MEASLST_MEASURES$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."HCS_MEASLST_MEASURES$" MODIFY ("AV#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_MEASLST_MEASURES$" MODIFY ("MEASLST#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_MEASLST_MEASURES$" MODIFY ("MEAS_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_MEASLST_MEASURES$" MODIFY ("ORDER_NUM" NOT NULL ENABLE);

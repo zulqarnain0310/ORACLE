@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table OFSFTAB$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OFSFTAB$" MODIFY ("FSTYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OFSFTAB$" MODIFY ("FSNAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OFSFTAB$" ADD CONSTRAINT "PK_OFSFTAB$" PRIMARY KEY ("FSTYPE", "FSNAME")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM"  ENABLE;

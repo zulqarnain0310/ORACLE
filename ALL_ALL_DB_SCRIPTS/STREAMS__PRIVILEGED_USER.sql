@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table STREAMS$_PRIVILEGED_USER
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."STREAMS$_PRIVILEGED_USER" SHARING=METADATA 
+   (	"USER#" NUMBER, 
+	"PRIVS" NUMBER, 
+	"FLAGS" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

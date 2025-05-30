@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table CRC$_RESULT_CACHE_STATS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."CRC$_RESULT_CACHE_STATS" MODIFY ("CACHE_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."CRC$_RESULT_CACHE_STATS" ADD CONSTRAINT "CRC$_RCSTATSPK" PRIMARY KEY ("CACHE_ID", "STAT_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX"  ENABLE;

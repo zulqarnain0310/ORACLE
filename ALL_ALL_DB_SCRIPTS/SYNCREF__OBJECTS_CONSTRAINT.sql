@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table SYNCREF$_OBJECTS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SYNCREF$_OBJECTS" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_OBJECTS" MODIFY ("OBJECT_TYPE_FLAG" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_OBJECTS" MODIFY ("GROUP_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_OBJECTS" MODIFY ("CURRENT_GROUP_FLAG" NOT NULL ENABLE);

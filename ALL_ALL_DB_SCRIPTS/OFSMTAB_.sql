@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table OFSMTAB$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."OFSMTAB$" SHARING=METADATA 
+   (	"MNTPATH" VARCHAR2(1024 BYTE), 
+	"PATH" VARCHAR2(1024 BYTE), 
+	"MNTOPTS" VARCHAR2(1024 BYTE), 
+	"FSTYPE" VARCHAR2(64 BYTE), 
+	"MNTDATE" DATE, 
+	"FSID" NUMBER(*,0), 
+	"NODENM" VARCHAR2(256 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

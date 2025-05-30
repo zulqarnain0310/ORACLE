@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table SCHEDULER$_REMOTE_DBS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SCHEDULER$_REMOTE_DBS" SHARING=METADATA 
+   (	"DATABASE_NAME" VARCHAR2(512 BYTE), 
+	"REG_STATUS" NUMBER, 
+	"DB_INDEX" NUMBER, 
+	"DATABASE_LINK" VARCHAR2(512 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

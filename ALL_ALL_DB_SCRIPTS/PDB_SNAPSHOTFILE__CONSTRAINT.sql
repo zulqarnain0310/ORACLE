@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table PDB_SNAPSHOTFILE$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."PDB_SNAPSHOTFILE$" MODIFY ("CON_ID#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SNAPSHOTFILE$" MODIFY ("SNAPSCN" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SNAPSHOTFILE$" MODIFY ("SNAPFILENAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SNAPSHOTFILE$" MODIFY ("SNAPFILETYPE" NOT NULL ENABLE);

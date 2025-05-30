@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  DDL for Table CLI_LOG$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CLI_LOG$" SHARING=METADATA 
+   (	"GUID" VARCHAR2(32 BYTE), 
+	"USER#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"CLIENT#" NUMBER, 
+	"LOG#" NUMBER, 
+	"FLAGS" NUMBER, 
+	"LOB_FLAGS" NUMBER, 
+	"RETENTION" NUMBER, 
+	"PART_SIZE" NUMBER, 
+	"HIGH_TAB#" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

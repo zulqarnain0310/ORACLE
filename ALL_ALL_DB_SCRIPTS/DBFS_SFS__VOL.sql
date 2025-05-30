@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table DBFS_SFS$_VOL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS_SFS$_VOL" SHARING=METADATA 
+   (	"TABID" NUMBER, 
+	"VOLID" NUMBER, 
+	"VOLNAME" VARCHAR2(128 BYTE), 
+	"CREATED" TIMESTAMP (6), 
+	"CSNAP#" NUMBER, 
+	"DVOLID" NUMBER, 
+	"DSNAP#" NUMBER, 
+	"DELETED" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT SELECT ON "SYS"."DBFS_SFS$_VOL" TO "DBFS_ROLE";

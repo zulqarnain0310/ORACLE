@@ -1,0 +1,21 @@
+--------------------------------------------------------
+--  DDL for Table IMSVC$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."IMSVC$" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"SUBPART#" NUMBER, 
+	"DATAOBJ#" NUMBER, 
+	"FILE#" NUMBER, 
+	"BLOCK#" NUMBER, 
+	"TS#" NUMBER, 
+	"SVCFLAGS" NUMBER, 
+	"SVCNAME" VARCHAR2(1000 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" VARCHAR2(1000 BYTE), 
+	"SPARE5" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

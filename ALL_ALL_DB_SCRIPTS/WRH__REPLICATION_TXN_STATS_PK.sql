@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index WRH$_REPLICATION_TXN_STATS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYS"."WRH$_REPLICATION_TXN_STATS_PK" ON "SYS"."WRH$_REPLICATION_TXN_STATS" ("DBID", "SNAP_ID", "INSTANCE_NUMBER", "OBJECT_NAME", "SESSION_TYPE", "SESSION_MODULE", "SOURCE_TXN_ID", "CON_DBID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX" ;

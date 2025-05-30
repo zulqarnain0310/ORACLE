@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table DBFS_SFS$_FSTP
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS_SFS$_FSTP" SHARING=METADATA 
+   (	"VOLID" NUMBER DEFAULT 0, 
+	"CSNAP#" NUMBER DEFAULT 0, 
+	"LSNAP#" NUMBER DEFAULT null, 
+	"STD_GUID" NUMBER(*,0), 
+	"PROPNAME" VARCHAR2(32 BYTE), 
+	"PROPVALUE" VARCHAR2(1024 BYTE), 
+	"TYPECODE" NUMBER(*,0)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT SELECT ON "SYS"."DBFS_SFS$_FSTP" TO "DBFS_ROLE";

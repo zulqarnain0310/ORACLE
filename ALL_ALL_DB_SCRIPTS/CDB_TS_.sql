@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  DDL for Table CDB_TS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CDB_TS$" SHARING=METADATA 
+   (	"TS#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"CON_ID#" NUMBER, 
+	"STATUS$" NUMBER, 
+	"CSCNWRP" NUMBER, 
+	"CSCNBAS" NUMBER, 
+	"FILECNT" NUMBER, 
+	"FLAGS" NUMBER, 
+	"PTYPE" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER, 
+	"SPARE5" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

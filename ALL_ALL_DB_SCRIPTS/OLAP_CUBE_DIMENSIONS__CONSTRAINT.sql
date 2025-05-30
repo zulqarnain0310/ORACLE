@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table OLAP_CUBE_DIMENSIONS$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OLAP_CUBE_DIMENSIONS$" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_CUBE_DIMENSIONS$" MODIFY ("DIMENSION_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_CUBE_DIMENSIONS$" MODIFY ("AUDIT$" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_CUBE_DIMENSIONS$" MODIFY ("IS_STALE" NOT NULL ENABLE);

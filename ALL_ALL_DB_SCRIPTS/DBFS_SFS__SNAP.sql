@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table DBFS_SFS$_SNAP
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS_SFS$_SNAP" SHARING=METADATA 
+   (	"TABID" NUMBER, 
+	"VOLID" NUMBER, 
+	"SNAP#" NUMBER, 
+	"SNAPNAME" VARCHAR2(128 BYTE), 
+	"CREATED" TIMESTAMP (6), 
+	"DELETED" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT SELECT ON "SYS"."DBFS_SFS$_SNAP" TO "DBFS_ROLE";

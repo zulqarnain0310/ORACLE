@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table MAP_SUBELEMENT$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."MAP_SUBELEMENT$" SHARING=METADATA 
+   (	"SUB_NUM" NUMBER, 
+	"SUB_SIZE" NUMBER, 
+	"ELEM_OFFSET" NUMBER, 
+	"SUB_FLAGS" NUMBER, 
+	"PARENT_IDX" NUMBER, 
+	"CHILD_IDX" NUMBER, 
+	"ELEM_NAME" VARCHAR2(2000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table WRR$_REPLAY_SQL_TEXT
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRR$_REPLAY_SQL_TEXT" MODIFY ("SQL_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRR$_REPLAY_SQL_TEXT" ADD CONSTRAINT "WRR$_REPLAY_SQL_TEXT_PK" PRIMARY KEY ("SQL_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX"  ENABLE;

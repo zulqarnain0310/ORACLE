@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table JIJOIN$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."JIJOIN$" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JIJOIN$" MODIFY ("TAB1OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JIJOIN$" MODIFY ("TAB1COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JIJOIN$" MODIFY ("TAB2OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JIJOIN$" MODIFY ("TAB2COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JIJOIN$" MODIFY ("JOINOP" NOT NULL ENABLE);

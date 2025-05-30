@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table SQL_TK_COLL_CHK$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SQL_TK_COLL_CHK$" MODIFY ("TABLE_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_COLL_CHK$" MODIFY ("CHK_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_COLL_CHK$" MODIFY ("COL_LIST" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_COLL_CHK$" MODIFY ("EXPR" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_COLL_CHK$" MODIFY ("CHECK_DESCRIPTION" NOT NULL ENABLE);

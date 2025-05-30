@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table HS$_CLASS_INIT
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."HS$_CLASS_INIT" SHARING=METADATA 
+   (	"FDS_CLASS_INIT_ID" NUMBER, 
+	"FDS_CLASS_ID" NUMBER, 
+	"INIT_VALUE_NAME" VARCHAR2(64 BYTE), 
+	"INIT_VALUE" VARCHAR2(255 BYTE), 
+	"INIT_VALUE_TYPE" VARCHAR2(1 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

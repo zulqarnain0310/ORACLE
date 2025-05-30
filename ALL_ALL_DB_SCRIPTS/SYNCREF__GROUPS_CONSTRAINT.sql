@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table SYNCREF$_GROUPS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SYNCREF$_GROUPS" MODIFY ("GROUP_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_GROUPS" MODIFY ("LOCK_FLAG" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_GROUPS" ADD PRIMARY KEY ("GROUP_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM"  ENABLE;

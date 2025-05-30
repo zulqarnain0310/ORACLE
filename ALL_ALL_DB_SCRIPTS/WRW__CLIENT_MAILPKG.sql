@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table WRW$_CLIENT_MAILPKG
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRW$_CLIENT_MAILPKG" SHARING=METADATA 
+   (	"CLIENT_NAME" VARCHAR2(128 BYTE), 
+	"SEQ_NUM" NUMBER, 
+	"MPK_NAME" VARCHAR2(128 BYTE), 
+	"MAILBOX" VARCHAR2(128 BYTE), 
+	"DBID" NUMBER, 
+	"MPK_STATE" NUMBER, 
+	"ACT_TIME" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

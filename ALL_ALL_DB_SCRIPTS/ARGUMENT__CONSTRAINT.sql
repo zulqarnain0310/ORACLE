@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table ARGUMENT$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."ARGUMENT$" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."ARGUMENT$" MODIFY ("OVERLOAD#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."ARGUMENT$" MODIFY ("POSITION#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."ARGUMENT$" MODIFY ("SEQUENCE#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."ARGUMENT$" MODIFY ("LEVEL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."ARGUMENT$" MODIFY ("TYPE#" NOT NULL ENABLE);

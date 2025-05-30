@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table HISTGRM$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."HISTGRM$" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HISTGRM$" MODIFY ("COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HISTGRM$" MODIFY ("BUCKET" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HISTGRM$" MODIFY ("ENDPOINT" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HISTGRM$" MODIFY ("INTCOL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HISTGRM$" MODIFY ("EP_REPEAT_COUNT" NOT NULL ENABLE);

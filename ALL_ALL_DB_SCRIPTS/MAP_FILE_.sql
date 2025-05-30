@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table MAP_FILE$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."MAP_FILE$" SHARING=METADATA 
+   (	"FILE_IDX" NUMBER, 
+	"FILE_CFGID" VARCHAR2(2000 BYTE), 
+	"FILE_STATUS" NUMBER, 
+	"FILE_NAME" VARCHAR2(2000 BYTE), 
+	"FILE_STRUCT" NUMBER, 
+	"FILE_TYPE" NUMBER, 
+	"FILE_SIZE" NUMBER, 
+	"FILE_NEXTS" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

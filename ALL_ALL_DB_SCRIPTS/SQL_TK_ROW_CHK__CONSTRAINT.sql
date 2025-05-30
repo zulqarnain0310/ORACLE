@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table SQL_TK_ROW_CHK$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SQL_TK_ROW_CHK$" MODIFY ("TABLE_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_ROW_CHK$" MODIFY ("CHK_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_ROW_CHK$" MODIFY ("COL_LIST" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_ROW_CHK$" MODIFY ("CONSTRAINT_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SQL_TK_ROW_CHK$" MODIFY ("CHECK_DESCRIPTION" NOT NULL ENABLE);

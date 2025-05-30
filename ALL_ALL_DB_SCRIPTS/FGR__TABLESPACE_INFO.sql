@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table FGR$_TABLESPACE_INFO
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."FGR$_TABLESPACE_INFO" SHARING=METADATA 
+   (	"VERSION_GUID" RAW(16), 
+	"TABLESPACE_NAME" VARCHAR2(30 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(128 BYTE), 
+	"SPARE4" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

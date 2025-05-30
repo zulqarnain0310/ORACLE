@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table SCHEDULER$_CONSTRAINTS_STATS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SCHEDULER$_CONSTRAINTS_STATS" SHARING=METADATA 
+   (	"OID" NUMBER, 
+	"RESOID" NUMBER, 
+	"JOBOID" NUMBER, 
+	"LAST_BLOCK" TIMESTAMP (6) WITH TIME ZONE, 
+	"TOTAL_BLOCK_COUNT" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

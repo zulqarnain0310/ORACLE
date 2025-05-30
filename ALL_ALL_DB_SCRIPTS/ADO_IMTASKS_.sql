@@ -1,0 +1,20 @@
+--------------------------------------------------------
+--  DDL for Table ADO_IMTASKS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."ADO_IMTASKS$" SHARING=METADATA 
+   (	"TASK_ID" NUMBER, 
+	"CREATION_TIME" TIMESTAMP (6), 
+	"TASK_TYPE" NUMBER, 
+	"IM_SIZE" NUMBER, 
+	"FLAG" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" VARCHAR2(128 BYTE), 
+	"SPARE5" VARCHAR2(128 BYTE), 
+	"SPARE6" TIMESTAMP (6), 
+	"STATE" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table PDB_SYNC$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."PDB_SYNC$" MODIFY ("SCNWRP" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SYNC$" MODIFY ("SCNBAS" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SYNC$" MODIFY ("CTIME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SYNC$" MODIFY ("NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SYNC$" MODIFY ("OPCODE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."PDB_SYNC$" MODIFY ("REPLAY#" NOT NULL ENABLE);

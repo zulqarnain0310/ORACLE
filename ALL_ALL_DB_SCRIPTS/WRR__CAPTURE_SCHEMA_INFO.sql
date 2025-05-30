@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_CAPTURE_SCHEMA_INFO
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_CAPTURE_SCHEMA_INFO" SHARING=METADATA 
+   (	"CAPTURE_ID" NUMBER(*,0), 
+	"SQL_ID" VARCHAR2(13 BYTE), 
+	"LOGIN_SCHEMA" VARCHAR2(128 BYTE), 
+	"CURRENT_SCHEMA" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

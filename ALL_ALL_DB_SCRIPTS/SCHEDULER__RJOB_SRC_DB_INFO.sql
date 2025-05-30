@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table SCHEDULER$_RJOB_SRC_DB_INFO
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SCHEDULER$_RJOB_SRC_DB_INFO" SHARING=METADATA 
+   (	"JOBOID" NUMBER, 
+	"SOURCE_DB" VARCHAR2(512 BYTE), 
+	"SOURCE_SCHEMA" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

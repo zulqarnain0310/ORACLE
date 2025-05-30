@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table WRW$_CLIENT_DELIVERY_SVC
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRW$_CLIENT_DELIVERY_SVC" SHARING=METADATA 
+   (	"SERVICE_NAME" VARCHAR2(128 BYTE), 
+	"SERVICE_TYPE" NUMBER, 
+	"SERVER_MAILBOX" VARCHAR2(128 BYTE) DEFAULT null
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

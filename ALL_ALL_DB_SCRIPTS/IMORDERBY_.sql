@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  DDL for Table IMORDERBY$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."IMORDERBY$" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"BO#" NUMBER, 
+	"FILE#" NUMBER, 
+	"BLOCK#" NUMBER, 
+	"TS#" NUMBER, 
+	"INTCOL#" NUMBER, 
+	"POSITION" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER, 
+	"SPARE5" VARCHAR2(1000 BYTE), 
+	"SPARE6" VARCHAR2(1000 BYTE), 
+	"SPARE7" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

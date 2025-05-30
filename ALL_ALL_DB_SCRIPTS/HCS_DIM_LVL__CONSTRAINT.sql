@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table HCS_DIM_LVL$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."HCS_DIM_LVL$" MODIFY ("DIM#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_DIM_LVL$" MODIFY ("LVL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_DIM_LVL$" MODIFY ("MEMBER_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_DIM_LVL$" MODIFY ("LVL_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_DIM_LVL$" MODIFY ("ORDER_NUM" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."HCS_DIM_LVL$" MODIFY ("IS_PC" NOT NULL ENABLE);

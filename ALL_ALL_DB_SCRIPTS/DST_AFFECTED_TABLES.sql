@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table DST$AFFECTED_TABLES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DST$AFFECTED_TABLES" SHARING=METADATA 
+   (	"TABLE_OWNER" VARCHAR2(128 BYTE), 
+	"TABLE_NAME" VARCHAR2(128 BYTE), 
+	"COLUMN_NAME" VARCHAR2(4000 BYTE), 
+	"ROW_COUNT" NUMBER, 
+	"ERROR_COUNT" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table SYNCREF$_LOG_EXCEPTIONS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SYNCREF$_LOG_EXCEPTIONS" SHARING=METADATA 
+   (	"TABLE_OBJ#" NUMBER, 
+	"STAGING_LOG_OBJ#" NUMBER, 
+	"BAD_ROWID" ROWID, 
+	"ERROR_NUMBER" NUMBER, 
+	"ERROR_MESSAGE" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

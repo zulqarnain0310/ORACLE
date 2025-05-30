@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_REPLAY_SQL_MAP
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_REPLAY_SQL_MAP" SHARING=METADATA 
+   (	"REPLAY_ID" NUMBER(*,0), 
+	"SCHEDULE_CAP_ID" NUMBER(*,0), 
+	"SQL_ID" VARCHAR2(13 BYTE), 
+	"OPERATION" NUMBER(*,0), 
+	"SQL_ID_NUMBER" NUMBER, 
+	"REPLACEMENT_SQL_TEXT" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

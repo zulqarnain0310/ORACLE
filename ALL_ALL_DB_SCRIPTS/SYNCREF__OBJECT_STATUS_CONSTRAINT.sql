@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table SYNCREF$_OBJECT_STATUS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SYNCREF$_OBJECT_STATUS" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_OBJECT_STATUS" MODIFY ("CUR_RUN_FLAG" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_OBJECT_STATUS" MODIFY ("GROUP_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SYNCREF$_OBJECT_STATUS" MODIFY ("STATUS" NOT NULL ENABLE);

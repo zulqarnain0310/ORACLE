@@ -1,0 +1,18 @@
+--------------------------------------------------------
+--  DDL for Table WRI$_ADV_SQLW_TABLES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRI$_ADV_SQLW_TABLES" SHARING=METADATA 
+   (	"WORKLOAD_ID" NUMBER, 
+	"SQL_ID" NUMBER, 
+	"TABLE_OWNER#" NUMBER, 
+	"TABLE#" NUMBER, 
+	"TABLE_OWNER" VARCHAR2(128 BYTE), 
+	"TABLE_NAME" VARCHAR2(128 BYTE), 
+	"INST_ID" NUMBER, 
+	"HASH_VALUE" NUMBER, 
+	"ADDR" RAW(16), 
+	"OBJ_TYPE" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

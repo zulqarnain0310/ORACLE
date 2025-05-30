@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table DBFS_HS$_SFLOCATORTABLE
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS_HS$_SFLOCATORTABLE" SHARING=METADATA 
+   (	"ARCHIVEREFID" RAW(256), 
+	"SEQUENCENUMBER" NUMBER, 
+	"STARTOFFSET" NUMBER, 
+	"ENDOFFSET" NUMBER, 
+	"TARBALLID" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

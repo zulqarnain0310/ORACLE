@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table IM_DOMAIN$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."IM_DOMAIN$" MODIFY ("OBJN" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."IM_DOMAIN$" MODIFY ("COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."IM_DOMAIN$" MODIFY ("DOMAIN#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."IM_DOMAIN$" ADD CONSTRAINT "IM_DOMAIN_UK" UNIQUE ("OBJN", "COL#")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM"  ENABLE;

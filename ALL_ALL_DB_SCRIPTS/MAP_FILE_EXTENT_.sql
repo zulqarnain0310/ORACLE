@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table MAP_FILE_EXTENT$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."MAP_FILE_EXTENT$" SHARING=METADATA 
+   (	"FILE_IDX" NUMBER, 
+	"EXT_NUM" NUMBER, 
+	"EXT_DEV_OFF" NUMBER, 
+	"EXT_SIZE" NUMBER, 
+	"EXT_FILE_OFF" NUMBER, 
+	"EXT_TYPE" NUMBER, 
+	"ELEM_NAME" VARCHAR2(2000 BYTE), 
+	"ELEM_IDX" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

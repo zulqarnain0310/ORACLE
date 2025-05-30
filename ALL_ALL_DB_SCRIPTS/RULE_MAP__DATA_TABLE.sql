@@ -1,0 +1,4 @@
+REM INSERTING into SYS.RULE_MAP$
+SET DEFINE OFF;
+Insert into SYS.RULE_MAP$ (R_OBJ#,RS_OBJ#,PROPERTY,ECTX#,RM_COMMENT) values (20399,20398,0,0,null);
+Insert into SYS.RULE_MAP$ (R_OBJ#,RS_OBJ#,PROPERTY,ECTX#,RM_COMMENT) values (20399,19786,0,19770,'adding to queue default ruleset');

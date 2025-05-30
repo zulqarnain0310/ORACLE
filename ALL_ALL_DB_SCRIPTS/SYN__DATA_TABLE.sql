@@ -1,0 +1,23 @@
+REM INSERTING into SYS.SYN$
+SET DEFINE OFF;
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (77857,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (78767,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (78965,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79049,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79065,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79067,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79076,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79085,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79086,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79087,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79090,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (79091,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85775,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85817,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85822,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85826,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85828,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85834,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85836,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85837,null,'EMULATION','UTILS');
+Insert into SYS.SYN$ (OBJ#,NODE,OWNER,NAME) values (85970,null,'EMULATION','UTILS');

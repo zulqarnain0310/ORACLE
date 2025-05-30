@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table ILM_DEP_EXECUTIONDETAILS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."ILM_DEP_EXECUTIONDETAILS$" SHARING=METADATA 
+   (	"EXECUTION_ID" NUMBER, 
+	"OBJ#" NUMBER, 
+	"PAR_JOBNAME" VARCHAR2(128 BYTE), 
+	"JOBNAME" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

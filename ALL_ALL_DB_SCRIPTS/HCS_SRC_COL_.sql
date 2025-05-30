@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table HCS_SRC_COL$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."HCS_SRC_COL$" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"SRC_COL#" NUMBER, 
+	"OBJ_TYPE" NUMBER, 
+	"TABLE_ALIAS" VARCHAR2(128 BYTE), 
+	"SRC_COL_NAME" VARCHAR2(128 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

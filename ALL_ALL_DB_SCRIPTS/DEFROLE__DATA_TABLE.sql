@@ -1,0 +1,3 @@
+REM INSERTING into SYS.DEFROLE$
+SET DEFINE OFF;
+Insert into SYS.DEFROLE$ (USER#,ROLE#) values (118,3);

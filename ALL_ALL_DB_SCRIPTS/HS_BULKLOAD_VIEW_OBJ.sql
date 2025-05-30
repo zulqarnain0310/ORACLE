@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table HS_BULKLOAD_VIEW_OBJ
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."HS_BULKLOAD_VIEW_OBJ" SHARING=METADATA 
+   (	"SCHEMA_NAME" VARCHAR2(128 BYTE), 
+	"VIEW_NAME" VARCHAR2(128 BYTE), 
+	"TEMP_OBJ_ID" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT READ ON "SYS"."HS_BULKLOAD_VIEW_OBJ" TO PUBLIC;

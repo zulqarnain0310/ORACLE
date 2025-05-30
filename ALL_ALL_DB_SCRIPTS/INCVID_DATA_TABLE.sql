@@ -1,0 +1,3 @@
+REM INSERTING into SYS.INCVID
+SET DEFINE OFF;
+Insert into SYS.INCVID (EXPID) values (0);

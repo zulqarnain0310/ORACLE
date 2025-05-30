@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_REPLAY_DEP_GRAPH
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_REPLAY_DEP_GRAPH" SHARING=METADATA 
+   (	"SCHEDULE_CAP_ID" NUMBER DEFAULT 0, 
+	"FILE_ID" NUMBER, 
+	"CALL_CTR" NUMBER, 
+	"FILE_ID_DEP" NUMBER, 
+	"CALL_CTR_DEP" NUMBER, 
+	"SYNC_POINT" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS NOLOGGING
+  TABLESPACE "SYSAUX" ;

@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_CONNECTION_MAP
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_CONNECTION_MAP" SHARING=METADATA 
+   (	"REPLAY_ID" NUMBER, 
+	"CONN_ID" NUMBER, 
+	"SCHEDULE_CAP_ID" NUMBER, 
+	"CAPTURE_CONN" VARCHAR2(4000 BYTE), 
+	"REPLAY_CONN" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

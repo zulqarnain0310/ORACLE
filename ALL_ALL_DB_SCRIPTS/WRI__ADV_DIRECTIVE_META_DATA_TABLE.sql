@@ -1,0 +1,7 @@
+REM INSERTING into SYS.WRI$_ADV_DIRECTIVE_META
+SET DEFINE OFF;
+Insert into SYS.WRI$_ADV_DIRECTIVE_META (ID) values (1);
+Insert into SYS.WRI$_ADV_DIRECTIVE_META (ID) values (2);
+Insert into SYS.WRI$_ADV_DIRECTIVE_META (ID) values (3);
+Insert into SYS.WRI$_ADV_DIRECTIVE_META (ID) values (4);
+Insert into SYS.WRI$_ADV_DIRECTIVE_META (ID) values (5);

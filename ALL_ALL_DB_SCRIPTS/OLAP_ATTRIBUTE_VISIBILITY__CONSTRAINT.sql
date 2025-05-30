@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table OLAP_ATTRIBUTE_VISIBILITY$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OLAP_ATTRIBUTE_VISIBILITY$" MODIFY ("ATTRIBUTE_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_ATTRIBUTE_VISIBILITY$" MODIFY ("OWNING_DIM_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_ATTRIBUTE_VISIBILITY$" MODIFY ("OWNING_DIM_TYPE" NOT NULL ENABLE);

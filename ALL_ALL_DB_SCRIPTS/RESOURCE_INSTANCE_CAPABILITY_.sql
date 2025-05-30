@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table RESOURCE_INSTANCE_CAPABILITY$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."RESOURCE_INSTANCE_CAPABILITY$" SHARING=METADATA 
+   (	"INSTANCE_NUMBER" NUMBER, 
+	"IO_SHARES" NUMBER, 
+	"STATUS" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

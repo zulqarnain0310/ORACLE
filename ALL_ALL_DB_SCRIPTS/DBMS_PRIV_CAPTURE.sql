@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Package DBMS_PRIV_CAPTURE
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE PACKAGE "SYS"."DBMS_PRIV_CAPTURE" 
+
+/
+
+  GRANT EXECUTE ON "SYS"."DBMS_PRIV_CAPTURE" TO "XDB";
+  GRANT EXECUTE ON "SYS"."DBMS_PRIV_CAPTURE" TO "CTXSYS";
+  GRANT EXECUTE ON "SYS"."DBMS_PRIV_CAPTURE" TO "MDSYS";
+  GRANT EXECUTE ON "SYS"."DBMS_PRIV_CAPTURE" TO "LBACSYS";

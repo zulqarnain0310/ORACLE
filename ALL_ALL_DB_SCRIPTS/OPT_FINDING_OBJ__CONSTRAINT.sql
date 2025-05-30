@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table OPT_FINDING_OBJ$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OPT_FINDING_OBJ$" MODIFY ("F_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING_OBJ$" MODIFY ("F_OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING_OBJ$" MODIFY ("OBJ_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING_OBJ$" MODIFY ("CVEC_SIZE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OPT_FINDING_OBJ$" MODIFY ("FLAGS" NOT NULL ENABLE);

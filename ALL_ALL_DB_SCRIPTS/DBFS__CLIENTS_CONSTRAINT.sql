@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table DBFS$_CLIENTS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."DBFS$_CLIENTS" MODIFY ("C_INFO" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."DBFS$_CLIENTS" MODIFY ("CREATED" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."DBFS$_CLIENTS" ADD PRIMARY KEY ("C_INFO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM"  ENABLE;

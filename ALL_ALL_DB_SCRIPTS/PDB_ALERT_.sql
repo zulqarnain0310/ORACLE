@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  DDL for Table PDB_ALERT$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."PDB_ALERT$" SHARING=METADATA 
+   (	"CAUSE#" NUMBER, 
+	"TYPE#" NUMBER, 
+	"TIME" TIMESTAMP (6), 
+	"LINE#" NUMBER, 
+	"MSG$" VARCHAR2(4000 BYTE), 
+	"NAME" VARCHAR2(128 BYTE), 
+	"CON_UID" NUMBER, 
+	"ERROR#" NUMBER, 
+	"STATUS" NUMBER, 
+	"ACTION" VARCHAR2(4000 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(30 BYTE), 
+	"CAUSE" VARCHAR2(64 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

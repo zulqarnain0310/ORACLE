@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table OPATCH_SQL_PATCHES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."OPATCH_SQL_PATCHES" SHARING=METADATA 
+   (	"PATCH" VARCHAR2(128 BYTE), 
+	"PATCH_UID" VARCHAR2(128 BYTE), 
+	"NODE_NAMES" VARCHAR2(32000 BYTE), 
+	"ALL_NODE" CHAR(1 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

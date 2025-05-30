@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table WRI$_ALERT_OUTSTANDING
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRI$_ALERT_OUTSTANDING" ADD CONSTRAINT "WRI$_ALERTS_OUTSTANDING_PK" PRIMARY KEY ("CON_ID", "REASON_ID", "OBJECT_ID", "SUBOBJECT_ID", "INTERNAL_INSTANCE_NUMBER")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX"  ENABLE;

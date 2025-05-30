@@ -1,0 +1,12 @@
+REM INSERTING into SYS.RESOURCE_COST$
+SET DEFINE OFF;
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (0,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (1,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (2,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (3,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (4,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (5,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (6,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (7,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (8,0);
+Insert into SYS.RESOURCE_COST$ (RESOURCE#,COST) values (9,0);

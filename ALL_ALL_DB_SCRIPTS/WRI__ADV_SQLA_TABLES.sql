@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table WRI$_ADV_SQLA_TABLES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRI$_ADV_SQLA_TABLES" SHARING=METADATA 
+   (	"TASK_ID" NUMBER, 
+	"SQL_ID" VARCHAR2(13 BYTE), 
+	"STMT_ID" NUMBER, 
+	"TABLE_OWNER#" NUMBER, 
+	"TABLE#" NUMBER, 
+	"TABLE_OWNER" VARCHAR2(128 BYTE), 
+	"TABLE_NAME" VARCHAR2(128 BYTE), 
+	"OBJ_TYPE" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

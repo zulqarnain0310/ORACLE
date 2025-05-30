@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table AQ$_QUEUE_PARAMS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."AQ$_QUEUE_PARAMS" SHARING=METADATA 
+   (	"PNAME" VARCHAR2(128 BYTE), 
+	"PVALUE" VARCHAR2(128 BYTE), 
+	"PVALUE_NUM" NUMBER, 
+	"QUEUE_NAME" VARCHAR2(128 BYTE), 
+	"OWNER_NAME" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

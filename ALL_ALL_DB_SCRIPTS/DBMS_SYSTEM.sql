@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Package DBMS_SYSTEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE PACKAGE "SYS"."DBMS_SYSTEM" 
+
+/
+
+  GRANT EXECUTE ON "SYS"."DBMS_SYSTEM" TO "SYSTEM";
+  GRANT EXECUTE ON "SYS"."DBMS_SYSTEM" TO "OEM_MONITOR";
+  GRANT EXECUTE ON "SYS"."DBMS_SYSTEM" TO "GSMADMIN_INTERNAL";
+  GRANT EXECUTE ON "SYS"."DBMS_SYSTEM" TO "MDSYS";
+  GRANT EXECUTE ON "SYS"."DBMS_SYSTEM" TO "DVSYS";

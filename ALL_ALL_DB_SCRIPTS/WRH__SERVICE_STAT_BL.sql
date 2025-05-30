@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table WRH$_SERVICE_STAT_BL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRH$_SERVICE_STAT_BL" SHARING=METADATA 
+   (	"SNAP_ID" NUMBER, 
+	"DBID" NUMBER, 
+	"INSTANCE_NUMBER" NUMBER, 
+	"SERVICE_NAME_HASH" NUMBER, 
+	"STAT_ID" NUMBER, 
+	"VALUE" NUMBER, 
+	"CON_DBID" NUMBER, 
+	"PER_PDB" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

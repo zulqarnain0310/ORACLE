@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table SQLERROR$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SQLERROR$" SHARING=METADATA 
+   (	"SQLHASH" VARCHAR2(32 BYTE), 
+	"ERROR#" NUMBER, 
+	"ERRPOS#" NUMBER, 
+	"FLAGS" NUMBER, 
+	"SPARE1" NUMBER DEFAULT 0, 
+	"SPARE2" NUMBER DEFAULT 0, 
+	"SPARE3" NUMBER DEFAULT 0
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

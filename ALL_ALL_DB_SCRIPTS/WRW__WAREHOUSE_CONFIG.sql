@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table WRW$_WAREHOUSE_CONFIG
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRW$_WAREHOUSE_CONFIG" SHARING=METADATA 
+   (	"NODE_ID" NUMBER, 
+	"NODE_NAME" VARCHAR2(128 BYTE), 
+	"ROLE" NUMBER, 
+	"WAREHOUSE_NAME" VARCHAR2(128 BYTE), 
+	"MAILBOX" VARCHAR2(128 BYTE), 
+	"CONFIG_STATE" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

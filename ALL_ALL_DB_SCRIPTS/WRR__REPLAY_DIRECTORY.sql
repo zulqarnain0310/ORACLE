@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_REPLAY_DIRECTORY
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_REPLAY_DIRECTORY" SHARING=METADATA 
+   (	"DIRECTORY" VARCHAR2(128 BYTE), 
+	"DIR_PATH" VARCHAR2(4000 BYTE), 
+	"STATUS" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

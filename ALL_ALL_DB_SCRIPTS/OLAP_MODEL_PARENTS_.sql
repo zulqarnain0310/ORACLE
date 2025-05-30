@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table OLAP_MODEL_PARENTS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."OLAP_MODEL_PARENTS$" SHARING=METADATA 
+   (	"MODEL_ID" NUMBER, 
+	"PARENT_MODEL_ID" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

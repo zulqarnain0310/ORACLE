@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table WRI$_ADV_SQLW_SUM
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRI$_ADV_SQLW_SUM" SHARING=METADATA 
+   (	"WORKLOAD_ID" NUMBER, 
+	"DATA_SOURCE" VARCHAR2(2000 BYTE), 
+	"NUM_SELECT" NUMBER, 
+	"NUM_INSERT" NUMBER, 
+	"NUM_DELETE" NUMBER, 
+	"NUM_UPDATE" NUMBER, 
+	"NUM_MERGE" NUMBER, 
+	"SQLSET_ID" NUMBER, 
+	"SQLSET_REF_ID" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

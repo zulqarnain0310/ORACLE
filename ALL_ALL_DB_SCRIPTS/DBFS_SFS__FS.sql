@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table DBFS_SFS$_FS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBFS_SFS$_FS" SHARING=METADATA 
+   (	"STORE_OWNER" VARCHAR2(128 BYTE), 
+	"STORE_NAME" VARCHAR2(32 BYTE), 
+	"TABID" NUMBER, 
+	"VOLID" NUMBER, 
+	"SNAP#" NUMBER, 
+	"CREATED" TIMESTAMP (6)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT SELECT ON "SYS"."DBFS_SFS$_FS" TO "DBFS_ROLE";

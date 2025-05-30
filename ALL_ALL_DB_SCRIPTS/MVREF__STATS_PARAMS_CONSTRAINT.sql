@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table MVREF$_STATS_PARAMS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."MVREF$_STATS_PARAMS" MODIFY ("MV_OWNER" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."MVREF$_STATS_PARAMS" MODIFY ("MV_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."MVREF$_STATS_PARAMS" MODIFY ("COLLECTION_LEVEL" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."MVREF$_STATS_PARAMS" MODIFY ("RETENTION_PERIOD" NOT NULL ENABLE);

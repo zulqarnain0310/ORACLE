@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  DDL for Type ORATSDP_SCT_SENSITIVE_TYPE_V
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYS"."ORATSDP_SCT_SENSITIVE_TYPE_V" 
+
+/
+
+  GRANT EXECUTE ON "SYS"."ORATSDP_SCT_SENSITIVE_TYPE_V" TO "XDB";
+  GRANT EXECUTE ON "SYS"."ORATSDP_SCT_SENSITIVE_TYPE_V" TO PUBLIC WITH GRANT OPTION;

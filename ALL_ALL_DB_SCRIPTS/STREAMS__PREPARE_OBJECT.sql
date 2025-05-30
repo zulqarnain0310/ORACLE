@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table STREAMS$_PREPARE_OBJECT
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."STREAMS$_PREPARE_OBJECT" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"CAP_TYPE" NUMBER DEFAULT 0, 
+	"IGNORE_SCN" NUMBER, 
+	"TIMESTAMP" DATE, 
+	"FLAGS" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

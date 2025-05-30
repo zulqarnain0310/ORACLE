@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table SCHEDULER$_LWJOB_OBJ
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SCHEDULER$_LWJOB_OBJ" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"USERID" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"SUBNAME" VARCHAR2(128 BYTE), 
+	"PRGOID" NUMBER, 
+	"CREATION_TIME" DATE, 
+	"MOD_TIME" DATE, 
+	"SPEC_TIME" DATE, 
+	"FLAGS" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

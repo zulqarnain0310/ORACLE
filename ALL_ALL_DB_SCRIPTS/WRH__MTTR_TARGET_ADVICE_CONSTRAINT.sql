@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table WRH$_MTTR_TARGET_ADVICE
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRH$_MTTR_TARGET_ADVICE" MODIFY ("SNAP_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRH$_MTTR_TARGET_ADVICE" MODIFY ("DBID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRH$_MTTR_TARGET_ADVICE" MODIFY ("INSTANCE_NUMBER" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRH$_MTTR_TARGET_ADVICE" MODIFY ("CON_DBID" NOT NULL ENABLE);

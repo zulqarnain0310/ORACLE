@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table SCHEDULER$_SRCQ_INFO
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SCHEDULER$_SRCQ_INFO" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SCHEDULER$_SRCQ_INFO" ADD CONSTRAINT "SCHEDULER$_QINFO_PK" PRIMARY KEY ("OBJ#")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM"  ENABLE;

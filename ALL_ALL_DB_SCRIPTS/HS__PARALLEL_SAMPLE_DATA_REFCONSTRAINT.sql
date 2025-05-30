@@ -1,0 +1,6 @@
+--------------------------------------------------------
+--  Ref Constraints for Table HS$_PARALLEL_SAMPLE_DATA
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."HS$_PARALLEL_SAMPLE_DATA" ADD CONSTRAINT "HS_PARALLEL_SAMPLE_DATA_FK" FOREIGN KEY ("DBLINK", "REMOTE_TABLE_NAME", "REMOTE_SCHEMA_NAME")
+	  REFERENCES "SYS"."HS$_PARALLEL_METADATA" ("DBLINK", "REMOTE_TABLE_NAME", "REMOTE_SCHEMA_NAME") ON DELETE CASCADE ENABLE;

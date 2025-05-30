@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table OLAP_AW_VIEWS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."OLAP_AW_VIEWS$" SHARING=METADATA 
+   (	"VIEW_OBJ#" NUMBER, 
+	"VIEW_TYPE" NUMBER, 
+	"OLAP_OBJECT_TYPE" NUMBER, 
+	"OLAP_OBJECT_ID" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table KU$XKTFBUE
+--------------------------------------------------------
+
+  CREATE GLOBAL TEMPORARY TABLE "SYS"."KU$XKTFBUE" SHARING=METADATA 
+   (	"KTFBUESEGTSN" NUMBER, 
+	"KTFBUESEGFNO" NUMBER, 
+	"KTFBUESEGBNO" NUMBER, 
+	"KTFBUEBLKS" NUMBER
+   ) ON COMMIT PRESERVE ROWS ;
+  GRANT READ ON "SYS"."KU$XKTFBUE" TO PUBLIC;
+  GRANT INSERT ON "SYS"."KU$XKTFBUE" TO PUBLIC;

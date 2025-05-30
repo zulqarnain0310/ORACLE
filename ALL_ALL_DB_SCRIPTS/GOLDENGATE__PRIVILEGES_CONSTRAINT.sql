@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table GOLDENGATE$_PRIVILEGES
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."GOLDENGATE$_PRIVILEGES" MODIFY ("USERNAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."GOLDENGATE$_PRIVILEGES" MODIFY ("PRIVILEGE_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."GOLDENGATE$_PRIVILEGES" MODIFY ("PRIVILEGE_LEVEL" NOT NULL ENABLE);

@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table CHNF$_GROUP_FILTER_IOT
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."CHNF$_GROUP_FILTER_IOT" ADD PRIMARY KEY ("OBJECTNUM", "COLID", "OPERATOR", "RHSVAL")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(
+  BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "SYSAUX"  ENABLE;

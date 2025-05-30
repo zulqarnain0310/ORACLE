@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table APPLY$_CONF_HDLR_COLUMNS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."APPLY$_CONF_HDLR_COLUMNS" SHARING=METADATA 
+   (	"OBJECT_NUMBER" NUMBER, 
+	"RESOLUTION_ID" NUMBER, 
+	"COLUMN_NAME" VARCHAR2(128 BYTE), 
+	"SPARE1" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table OLAP_AW_DEPLOYMENT_CONTROLS$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OLAP_AW_DEPLOYMENT_CONTROLS$" MODIFY ("OBJECT_ROLE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_AW_DEPLOYMENT_CONTROLS$" MODIFY ("PARENT_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_AW_DEPLOYMENT_CONTROLS$" MODIFY ("PARENT_TYPE" NOT NULL ENABLE);

@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table WRR$_REPLAY_CONN_DATA
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRR$_REPLAY_CONN_DATA" MODIFY ("CONN_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRR$_REPLAY_CONN_DATA" ADD CONSTRAINT "WRR$_CONN_DATA_PK" PRIMARY KEY ("CONN_ID", "SLAVE_ID")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX"  ENABLE;

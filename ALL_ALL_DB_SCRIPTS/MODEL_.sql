@@ -1,0 +1,19 @@
+--------------------------------------------------------
+--  DDL for Table MODEL$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."MODEL$" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"FUNC" NUMBER, 
+	"ALG" NUMBER, 
+	"BDUR" NUMBER, 
+	"MSIZE" NUMBER, 
+	"VERSION" NUMBER, 
+	"AUDIT$" VARCHAR2(38 BYTE), 
+	"PSEQ#" NUMBER, 
+	"PCO" NUMBER, 
+	"PROPERTIES" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE( MAXEXTENTS 2147483645)
+  TABLESPACE "SYSTEM" ;

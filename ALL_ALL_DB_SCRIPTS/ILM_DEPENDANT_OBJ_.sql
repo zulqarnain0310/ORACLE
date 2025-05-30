@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table ILM_DEPENDANT_OBJ$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."ILM_DEPENDANT_OBJ$" SHARING=METADATA 
+   (	"EXECUTION_ID" NUMBER, 
+	"PAR_JOBNAME" VARCHAR2(128 BYTE), 
+	"OBJ#" NUMBER, 
+	"STATE" NUMBER, 
+	"CUR_JOBNAME" VARCHAR2(128 BYTE), 
+	"N_REBUILD_ATT" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

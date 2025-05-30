@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table CHNF$_CLAUSE_DEPENDENTS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CHNF$_CLAUSE_DEPENDENTS" SHARING=METADATA 
+   (	"CLAUSEID" NUMBER, 
+	"DEPENDENTID" NUMBER, 
+	"DEPENDENTTYPE" NUMBER, 
+	"REFCOUNT" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

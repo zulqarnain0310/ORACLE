@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index WRH$_BUFFERED_SUBSCRIBERS_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYS"."WRH$_BUFFERED_SUBSCRIBERS_PK" ON "SYS"."WRH$_BUFFERED_SUBSCRIBERS" ("DBID", "SNAP_ID", "INSTANCE_NUMBER", "QUEUE_SCHEMA", "QUEUE_NAME", "SUBSCRIBER_ID", "CON_DBID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX" ;

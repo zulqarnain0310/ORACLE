@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table XS$INSTSET_RULE
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."XS$INSTSET_RULE" SHARING=METADATA 
+   (	"XDSID#" NUMBER, 
+	"ORDER#" NUMBER, 
+	"RULE" VARCHAR2(4000 BYTE), 
+	"STATIC" NUMBER DEFAULT 0, 
+	"FLAGS" NUMBER DEFAULT 0, 
+	"DESCRIPTION" VARCHAR2(4000 BYTE) DEFAULT null
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

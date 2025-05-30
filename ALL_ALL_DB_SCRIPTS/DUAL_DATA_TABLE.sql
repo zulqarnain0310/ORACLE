@@ -1,0 +1,3 @@
+REM INSERTING into SYS.DUAL
+SET DEFINE OFF;
+Insert into SYS.DUAL (DUMMY) values ('X');

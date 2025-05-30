@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Ref Constraints for Table HS$_CLASS_CAPS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."HS$_CLASS_CAPS" ADD CONSTRAINT "HS$_CLASS_CAPS_FK1" FOREIGN KEY ("FDS_CLASS_ID")
+	  REFERENCES "SYS"."HS$_FDS_CLASS" ("FDS_CLASS_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "SYS"."HS$_CLASS_CAPS" ADD CONSTRAINT "HS$_CLASS_CAPS_FK2" FOREIGN KEY ("CAP_NUMBER")
+	  REFERENCES "SYS"."HS$_BASE_CAPS" ("CAP_NUMBER") ON DELETE CASCADE ENABLE;

@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Package Body DBMS_AQJMS_INTERNAL
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE PACKAGE BODY "SYS"."DBMS_AQJMS_INTERNAL" 
+
+/
+
+  GRANT EXECUTE ON "SYS"."DBMS_AQJMS_INTERNAL" TO "AQ_ADMINISTRATOR_ROLE";
+  GRANT EXECUTE ON "SYS"."DBMS_AQJMS_INTERNAL" TO "AQ_USER_ROLE";
+  GRANT EXECUTE ON "SYS"."DBMS_AQJMS_INTERNAL" TO "EXECUTE_CATALOG_ROLE";

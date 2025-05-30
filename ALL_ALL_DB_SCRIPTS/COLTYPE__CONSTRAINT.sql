@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table COLTYPE$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."COLTYPE$" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."COLTYPE$" MODIFY ("COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."COLTYPE$" MODIFY ("INTCOL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."COLTYPE$" MODIFY ("TOID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."COLTYPE$" MODIFY ("VERSION#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."COLTYPE$" MODIFY ("PACKED" NOT NULL ENABLE);

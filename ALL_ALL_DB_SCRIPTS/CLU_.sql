@@ -1,0 +1,32 @@
+--------------------------------------------------------
+--  DDL for Table CLU$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CLU$" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"DATAOBJ#" NUMBER, 
+	"TS#" NUMBER, 
+	"FILE#" NUMBER, 
+	"BLOCK#" NUMBER, 
+	"COLS" NUMBER, 
+	"PCTFREE$" NUMBER, 
+	"PCTUSED$" NUMBER, 
+	"INITRANS" NUMBER, 
+	"MAXTRANS" NUMBER, 
+	"SIZE$" NUMBER, 
+	"HASHFUNC" VARCHAR2(128 BYTE), 
+	"HASHKEYS" NUMBER, 
+	"FUNC" NUMBER, 
+	"EXTIND" NUMBER, 
+	"FLAGS" NUMBER, 
+	"DEGREE" NUMBER, 
+	"INSTANCES" NUMBER, 
+	"AVGCHN" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER, 
+	"SPARE5" VARCHAR2(1000 BYTE), 
+	"SPARE6" VARCHAR2(1000 BYTE), 
+	"SPARE7" DATE
+   ) CLUSTER "SYS"."C_OBJ#" ("OBJ#");

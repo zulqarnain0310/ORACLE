@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table XS$PARAMETERS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."XS$PARAMETERS" SHARING=METADATA 
+   (	"NAME" VARCHAR2(256 BYTE), 
+	"VALUE" VARCHAR2(4000 BYTE), 
+	"DESCRIPTION" VARCHAR2(4000 BYTE), 
+	"REGISTRATION_SEQUENCE" NUMBER, 
+	"FLAGS" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

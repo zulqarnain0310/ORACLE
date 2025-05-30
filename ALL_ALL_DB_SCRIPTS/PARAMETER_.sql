@@ -1,0 +1,21 @@
+--------------------------------------------------------
+--  DDL for Table PARAMETER$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."PARAMETER$" SHARING=METADATA 
+   (	"TOID" RAW(16), 
+	"VERSION#" NUMBER, 
+	"METHOD#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"PARAMETER#" NUMBER, 
+	"PARAM_TOID" RAW(16), 
+	"PARAM_VERSION#" NUMBER, 
+	"SYNOBJ#" NUMBER, 
+	"PROPERTIES" NUMBER, 
+	"CHARSETID" NUMBER, 
+	"CHARSETFORM" NUMBER, 
+	"DEFAULT$" VARCHAR2(4000 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER
+   ) CLUSTER "SYS"."C_TOID_VERSION#" ("TOID", "VERSION#");

@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table WRH$_SGASTAT_BL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRH$_SGASTAT_BL" SHARING=METADATA 
+   (	"SNAP_ID" NUMBER, 
+	"DBID" NUMBER, 
+	"INSTANCE_NUMBER" NUMBER, 
+	"NAME" VARCHAR2(64 BYTE), 
+	"POOL" VARCHAR2(30 BYTE), 
+	"BYTES" NUMBER, 
+	"CON_DBID" NUMBER, 
+	"STATTYPE" NUMBER, 
+	"PER_PDB" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

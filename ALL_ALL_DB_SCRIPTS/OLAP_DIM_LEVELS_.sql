@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table OLAP_DIM_LEVELS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."OLAP_DIM_LEVELS$" SHARING=METADATA 
+   (	"DIM_OBJ#" NUMBER, 
+	"LEVEL_NAME" VARCHAR2(128 BYTE), 
+	"LEVEL_ID" NUMBER, 
+	"LEVEL_ORDER" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

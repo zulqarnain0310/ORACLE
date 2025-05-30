@@ -1,0 +1,13 @@
+--------------------------------------------------------
+--  DDL for Table DST$ERROR_TABLE
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DST$ERROR_TABLE" SHARING=METADATA 
+   (	"TABLE_OWNER" VARCHAR2(128 BYTE), 
+	"TABLE_NAME" VARCHAR2(128 BYTE), 
+	"COLUMN_NAME" VARCHAR2(4000 BYTE), 
+	"RID" UROWID (4000), 
+	"ERROR_NUMBER" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

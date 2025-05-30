@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table OLAP_HIERARCHIES$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OLAP_HIERARCHIES$" MODIFY ("DIM_OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_HIERARCHIES$" MODIFY ("HIERARCHY_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_HIERARCHIES$" MODIFY ("HIERARCHY_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_HIERARCHIES$" MODIFY ("HIERARCHY_ID" NOT NULL ENABLE);

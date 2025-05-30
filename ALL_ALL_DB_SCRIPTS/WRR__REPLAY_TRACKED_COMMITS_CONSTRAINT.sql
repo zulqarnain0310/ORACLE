@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table WRR$_REPLAY_TRACKED_COMMITS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRR$_REPLAY_TRACKED_COMMITS" ADD CONSTRAINT "WRR$_REPLAY_TRACKED_COMMITS_PK" PRIMARY KEY ("REPLAY_DIR_NUMBER", "FILE_ID", "CALL_CTR")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX"  ENABLE;

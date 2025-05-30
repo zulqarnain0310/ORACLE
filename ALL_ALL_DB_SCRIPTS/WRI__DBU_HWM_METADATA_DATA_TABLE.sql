@@ -1,0 +1,27 @@
+REM INSERTING into SYS.WRI$_DBU_HWM_METADATA
+SET DEFINE OFF;
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('USER_TABLES',1,'Number of User Tables');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('SEGMENT_SIZE',1,'Size of Largest Segment (Bytes)');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('PART_TABLES',1,'Maximum Number of Partitions belonging to an User Table');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('PART_INDEXES',1,'Maximum Number of Partitions belonging to an User Index');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('USER_INDEXES',1,'Number of User Indexes');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('SESSIONS',1,'Maximum Number of Concurrent Sessions seen in the database');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('DB_SIZE',1,'Maximum Size of the Database (Bytes)');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('DATAFILES',1,'Maximum Number of Datafiles');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('TABLESPACES',1,'Maximum Number of Tablespaces');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('CPU_COUNT',1,'Maximum Number of CPUs');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('QUERY_LENGTH',1,'Maximum Query Length');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('SQL_NCHAR_COLUMNS',1,'Maximum Number of SQL NCHAR Columns');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('INSTANCES',1,'Oracle Database instances');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('USER_MV',1,'Maximum Number of Materialized Views (User)');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('ACTIVE_SESSIONS',1,'Maximum Average Active Sessions - estimated');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('HWM_DBMS_SCHEDULER',1,'Number of job runs per day');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('EXADATA_DISKS',1,'Number of physical disks');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('GLOBAL SERVICES',1,'Number of global services');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('SHARDS',2,'Number of deployed shards in catalog');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('PRIMARY SHARDS',2,'Number of deployed primary shards in catalog');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('Flex ASM',1,'Number of completed and successful failovers');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('_HWM_TEST_1',10,'Test HWM 1');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('_HWM_TEST_2',12,'Test HWM 2');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('_HWM_TEST_3',9,'Test HWM 3');
+Insert into SYS.WRI$_DBU_HWM_METADATA (NAME,METHOD,DESCRIPTION) values ('_HWM_TEST_4',9,'Test HWM 4 - Error case');

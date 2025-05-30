@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Ref Constraints for Table ILM_DEPENDANT_OBJ$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."ILM_DEPENDANT_OBJ$" ADD CONSTRAINT "FK_DEPOBJ" FOREIGN KEY ("EXECUTION_ID")
+	  REFERENCES "SYS"."ILM_EXECUTION$" ("EXECUTION_ID") ON DELETE CASCADE ENABLE;
+  ALTER TABLE "SYS"."ILM_DEPENDANT_OBJ$" ADD CONSTRAINT "FK_DEPOBJJOBN" FOREIGN KEY ("PAR_JOBNAME")
+	  REFERENCES "SYS"."ILM_RESULTS$" ("JOBNAME") ENABLE;

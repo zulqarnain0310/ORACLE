@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  DDL for Type DM_MODEL_SIGNATURE_ATTRIBUTE
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE TYPE "SYS"."DM_MODEL_SIGNATURE_ATTRIBUTE" 
+
+/
+
+  GRANT EXECUTE ON "SYS"."DM_MODEL_SIGNATURE_ATTRIBUTE" TO PUBLIC;
+  GRANT EXECUTE ON "SYS"."DM_MODEL_SIGNATURE_ATTRIBUTE" TO PUBLIC;

@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table SUBPARTCOL$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SUBPARTCOL$" MODIFY ("OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUBPARTCOL$" MODIFY ("INTCOL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUBPARTCOL$" MODIFY ("COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUBPARTCOL$" MODIFY ("POS#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUBPARTCOL$" MODIFY ("SEGCOL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUBPARTCOL$" MODIFY ("TYPE#" NOT NULL ENABLE);

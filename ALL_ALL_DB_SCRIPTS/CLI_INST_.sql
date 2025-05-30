@@ -1,0 +1,24 @@
+--------------------------------------------------------
+--  DDL for Table CLI_INST$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CLI_INST$" SHARING=METADATA 
+   (	"GUID" VARCHAR2(32 BYTE), 
+	"USER#" NUMBER, 
+	"LOG#" NUMBER, 
+	"INST#" NUMBER, 
+	"FLAGS" NUMBER, 
+	"MAX_BUCKET#" NUMBER, 
+	"NUM_BUCKETS" NUMBER, 
+	"INC_SCN" NUMBER, 
+	"INC_TIME" DATE, 
+	"CRT_SCN" NUMBER, 
+	"CRT_TIME" DATE, 
+	"INC#" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

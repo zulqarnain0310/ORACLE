@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table COMPARISON_COL$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."COMPARISON_COL$" SHARING=METADATA 
+   (	"COMPARISON_ID" NUMBER, 
+	"COL_POSITION" NUMBER, 
+	"COL_NAME" VARCHAR2(128 BYTE), 
+	"DATA_TYPE" NUMBER, 
+	"FLAGS" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" VARCHAR2(1000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

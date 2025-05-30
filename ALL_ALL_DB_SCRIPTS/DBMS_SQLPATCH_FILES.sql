@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table DBMS_SQLPATCH_FILES
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DBMS_SQLPATCH_FILES" SHARING=METADATA 
+   (	"PATCH_ID" NUMBER, 
+	"PATCH_UID" NUMBER, 
+	"INSTALL_FILE" VARCHAR2(80 BYTE), 
+	"ACTUAL_FILE" VARCHAR2(200 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table KU$_USER_MAPPING_VIEW_TBL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."KU$_USER_MAPPING_VIEW_TBL" SHARING=METADATA 
+   (	"USER#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
+  GRANT SELECT ON "SYS"."KU$_USER_MAPPING_VIEW_TBL" TO "SELECT_CATALOG_ROLE";

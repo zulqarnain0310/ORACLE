@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_CAPTURE_SQL_TMP
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_CAPTURE_SQL_TMP" SHARING=METADATA 
+   (	"SQL_ID" VARCHAR2(13 BYTE), 
+	"CAP_SQL_ID" VARCHAR2(13 BYTE), 
+	"CAP_SQL_ID_NUMBER" NUMBER(*,0), 
+	"OCT_TYPE" NUMBER(*,0), 
+	"FLAGS" NUMBER(*,0), 
+	"SQL_TEXT" VARCHAR2(1000 BYTE), 
+	"SQL_LENGTH" NUMBER(*,0)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

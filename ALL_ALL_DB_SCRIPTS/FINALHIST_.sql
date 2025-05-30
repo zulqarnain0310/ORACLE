@@ -1,0 +1,15 @@
+--------------------------------------------------------
+--  DDL for Table FINALHIST$
+--------------------------------------------------------
+
+  CREATE GLOBAL TEMPORARY TABLE "SYS"."FINALHIST$" SHARING=METADATA 
+   (	"ENDPOINT" NUMBER, 
+	"EPVALUE" VARCHAR2(1000 BYTE), 
+	"BUCKET" NUMBER, 
+	"EPREPCNT" NUMBER DEFAULT 0, 
+	"EPVALUE_RAW" RAW(1000), 
+	"SPARE1" VARCHAR2(1000 BYTE), 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER
+   ) ON COMMIT DELETE ROWS ;
+  GRANT INSERT ON "SYS"."FINALHIST$" TO PUBLIC;

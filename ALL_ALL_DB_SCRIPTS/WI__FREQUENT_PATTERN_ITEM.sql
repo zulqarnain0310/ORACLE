@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table WI$_FREQUENT_PATTERN_ITEM
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WI$_FREQUENT_PATTERN_ITEM" SHARING=METADATA 
+   (	"JOBID" NUMBER, 
+	"PATTERNID" NUMBER, 
+	"RANK" NUMBER, 
+	"TEMPLATEID" NUMBER, 
+	"ISFIRSTINLOOP" CHAR(1 BYTE), 
+	"ISLASTINLOOP" CHAR(1 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

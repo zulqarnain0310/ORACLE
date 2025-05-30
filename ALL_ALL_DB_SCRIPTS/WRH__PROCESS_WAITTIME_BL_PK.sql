@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index WRH$_PROCESS_WAITTIME_BL_PK
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "SYS"."WRH$_PROCESS_WAITTIME_BL_PK" ON "SYS"."WRH$_PROCESS_WAITTIME_BL" ("DBID", "SNAP_ID", "INSTANCE_NUMBER", "CON_DBID", "PROCESS_TYPE", "DESCRIPTION", "WAIT_CLASS_TYPE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX" ;

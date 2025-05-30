@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index WRH$_WAITCLASSMETRIC_HIST_IND
+--------------------------------------------------------
+
+  CREATE INDEX "SYS"."WRH$_WAITCLASSMETRIC_HIST_IND" ON "SYS"."WRH$_WAITCLASSMETRIC_HISTORY" ("DBID", "SNAP_ID", "INSTANCE_NUMBER", "GROUP_ID", "WAIT_CLASS_ID", "BEGIN_TIME", "CON_DBID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX" ;

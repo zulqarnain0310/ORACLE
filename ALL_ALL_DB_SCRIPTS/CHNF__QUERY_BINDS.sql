@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table CHNF$_QUERY_BINDS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CHNF$_QUERY_BINDS" SHARING=METADATA 
+   (	"QUERYID" NUMBER, 
+	"QUERYBINDPOS" NUMBER, 
+	"QUERYBINDNAME" VARCHAR2(128 BYTE), 
+	"QUERYBINDVALUE" RAW(512)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

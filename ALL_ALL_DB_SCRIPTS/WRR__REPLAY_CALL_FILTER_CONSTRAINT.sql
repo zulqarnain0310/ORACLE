@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table WRR$_REPLAY_CALL_FILTER
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRR$_REPLAY_CALL_FILTER" ADD CONSTRAINT "WRR$_REPLAY_CALL_FILTER_PK" PRIMARY KEY ("FILE_ID", "CALL_COUNTER_BEGIN", "CALL_COUNTER_END")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSAUX"  ENABLE;

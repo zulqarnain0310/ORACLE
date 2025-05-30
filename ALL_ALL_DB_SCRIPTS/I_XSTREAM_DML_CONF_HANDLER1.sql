@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index I_XSTREAM_DML_CONF_HANDLER1
+--------------------------------------------------------
+
+  CREATE INDEX "SYS"."I_XSTREAM_DML_CONF_HANDLER1" ON "SYS"."XSTREAM$_DML_CONFLICT_HANDLER" ("APPLY_NAME", "SCHEMA_NAME", "OBJECT_NAME", "OLD_SCHEMA", "OLD_OBJECT", "OPNUM", "CONFLICT_TYPE", "METHOD_NUM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM" ;

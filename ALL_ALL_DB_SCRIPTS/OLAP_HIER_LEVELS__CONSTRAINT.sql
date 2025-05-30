@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table OLAP_HIER_LEVELS$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."OLAP_HIER_LEVELS$" MODIFY ("HIERARCHY_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_HIER_LEVELS$" MODIFY ("ORDER_NUM" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_HIER_LEVELS$" MODIFY ("HIERARCHY_LEVEL_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."OLAP_HIER_LEVELS$" MODIFY ("DIM_LEVEL_ID" NOT NULL ENABLE);

@@ -1,0 +1,6 @@
+REM INSERTING into SYS.SQL_VERSION$
+SET DEFINE OFF;
+Insert into SYS.SQL_VERSION$ (VERSION#,SQL_VERSION) values (0,'8.1.5');
+Insert into SYS.SQL_VERSION$ (VERSION#,SQL_VERSION) values (2,'8.1.5');
+Insert into SYS.SQL_VERSION$ (VERSION#,SQL_VERSION) values (5,'8.1.5');
+Insert into SYS.SQL_VERSION$ (VERSION#,SQL_VERSION) values (6,'8.1.6');

@@ -1,0 +1,9 @@
+--------------------------------------------------------
+--  Constraints for Table WRHS$_SQLTEXT
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."WRHS$_SQLTEXT" MODIFY ("DBID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRHS$_SQLTEXT" MODIFY ("SQL_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRHS$_SQLTEXT" MODIFY ("CON_DBID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRHS$_SQLTEXT" MODIFY ("STAGE_INST_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."WRHS$_SQLTEXT" MODIFY ("STAGE_ID" NOT NULL ENABLE);

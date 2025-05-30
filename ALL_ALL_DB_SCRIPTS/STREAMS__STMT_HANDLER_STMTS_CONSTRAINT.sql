@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table STREAMS$_STMT_HANDLER_STMTS
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."STREAMS$_STMT_HANDLER_STMTS" MODIFY ("HANDLER_ID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."STREAMS$_STMT_HANDLER_STMTS" MODIFY ("STATEMENT_TYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."STREAMS$_STMT_HANDLER_STMTS" MODIFY ("EXECUTION_SEQUENCE" NOT NULL ENABLE);

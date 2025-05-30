@@ -1,0 +1,18 @@
+--------------------------------------------------------
+--  DDL for Table MODELATT$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."MODELATT$" SHARING=METADATA 
+   (	"MOD#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"ATYP" NUMBER, 
+	"DTYP" NUMBER, 
+	"LENGTH" NUMBER, 
+	"PRECISION#" NUMBER, 
+	"SCALE" NUMBER, 
+	"PROPERTIES" NUMBER, 
+	"ATTRSPEC" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  STORAGE( MAXEXTENTS 2147483645)
+  TABLESPACE "SYSTEM" ;

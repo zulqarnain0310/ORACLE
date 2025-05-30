@@ -1,0 +1,27 @@
+--------------------------------------------------------
+--  DDL for Table CLI_TAB$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."CLI_TAB$" SHARING=METADATA 
+   (	"GUID" VARCHAR2(32 BYTE), 
+	"USER#" NUMBER, 
+	"LOG#" NUMBER, 
+	"TAB#" NUMBER, 
+	"VER#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"FLAGS" NUMBER, 
+	"LOB_FLAGS" NUMBER, 
+	"CUR_TS#" NUMBER, 
+	"CRT_SCN" NUMBER, 
+	"CRT_TIME" DATE, 
+	"MIN_SCN" NUMBER, 
+	"MIN_TIME" DATE, 
+	"HIGH_PART#" NUMBER, 
+	"NUM_PARTS" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

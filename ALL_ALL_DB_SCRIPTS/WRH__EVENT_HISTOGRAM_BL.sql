@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table WRH$_EVENT_HISTOGRAM_BL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRH$_EVENT_HISTOGRAM_BL" SHARING=METADATA 
+   (	"SNAP_ID" NUMBER, 
+	"DBID" NUMBER, 
+	"INSTANCE_NUMBER" NUMBER, 
+	"EVENT_ID" NUMBER, 
+	"WAIT_TIME_MILLI" NUMBER, 
+	"WAIT_COUNT" NUMBER, 
+	"CON_DBID" NUMBER, 
+	"PER_PDB" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

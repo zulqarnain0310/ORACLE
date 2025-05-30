@@ -1,0 +1,22 @@
+--------------------------------------------------------
+--  DDL for Table DIM$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."DIM$" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"DIMTEXTLEN" NUMBER, 
+	"DIMTEXT" LONG, 
+	"FLAGS" NUMBER, 
+	"NUMLEVELS" NUMBER, 
+	"NUMLEVKEYS" NUMBER, 
+	"NUMJOINKEYS" NUMBER, 
+	"NUMHIER" NUMBER, 
+	"NUMHIERLV" NUMBER, 
+	"NUMATTR" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" DATE
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

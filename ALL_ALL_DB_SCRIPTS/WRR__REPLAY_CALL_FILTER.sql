@@ -1,0 +1,12 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_REPLAY_CALL_FILTER
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_REPLAY_CALL_FILTER" SHARING=METADATA 
+   (	"FILE_ID" NUMBER, 
+	"CALL_COUNTER_BEGIN" NUMBER, 
+	"CALL_COUNTER_END" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;
+  GRANT READ ON "SYS"."WRR$_REPLAY_CALL_FILTER" TO PUBLIC;

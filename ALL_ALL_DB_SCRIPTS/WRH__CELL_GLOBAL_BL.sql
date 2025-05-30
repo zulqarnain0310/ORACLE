@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table WRH$_CELL_GLOBAL_BL
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRH$_CELL_GLOBAL_BL" SHARING=METADATA 
+   (	"SNAP_ID" NUMBER, 
+	"DBID" NUMBER, 
+	"CELL_HASH" NUMBER, 
+	"INCARNATION_NUM" NUMBER, 
+	"CON_DBID" NUMBER, 
+	"METRIC_ID" NUMBER, 
+	"METRIC_VALUE" NUMBER, 
+	"PER_PDB" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

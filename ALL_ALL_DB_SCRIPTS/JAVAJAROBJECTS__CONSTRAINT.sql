@@ -1,0 +1,8 @@
+--------------------------------------------------------
+--  Constraints for Table JAVAJAROBJECTS$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."JAVAJAROBJECTS$" MODIFY ("JARNAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JAVAJAROBJECTS$" MODIFY ("OWNER#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JAVAJAROBJECTS$" MODIFY ("OBJNAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."JAVAJAROBJECTS$" MODIFY ("NAMESPACE" NOT NULL ENABLE);

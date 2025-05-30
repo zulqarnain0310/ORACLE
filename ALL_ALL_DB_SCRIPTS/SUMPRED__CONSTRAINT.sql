@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table SUMPRED$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SUMPRED$" MODIFY ("SUMOBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMPRED$" MODIFY ("NODEID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMPRED$" MODIFY ("PNODEID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMPRED$" MODIFY ("CLAUSEID" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMPRED$" MODIFY ("NODETYPE" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMPRED$" MODIFY ("QBCID" NOT NULL ENABLE);

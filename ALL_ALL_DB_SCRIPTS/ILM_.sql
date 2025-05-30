@@ -1,0 +1,21 @@
+--------------------------------------------------------
+--  DDL for Table ILM$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."ILM$" SHARING=METADATA 
+   (	"POLICY#" NUMBER, 
+	"NAME" VARCHAR2(128 BYTE), 
+	"OWNER#" NUMBER, 
+	"TS#" NUMBER, 
+	"PTYPE" NUMBER, 
+	"FLAG" NUMBER, 
+	"FLAG2" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" VARCHAR2(4000 BYTE), 
+	"SPARE5" VARCHAR2(4000 BYTE), 
+	"SPARE6" TIMESTAMP (6)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

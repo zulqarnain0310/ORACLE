@@ -1,0 +1,6 @@
+--------------------------------------------------------
+--  Ref Constraints for Table ATTRIBUTE_TRANSFORMATIONS$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."ATTRIBUTE_TRANSFORMATIONS$" ADD CONSTRAINT "ATTRIBUTE_TRANSFORMATIONS_FK" FOREIGN KEY ("TRANSFORMATION_ID")
+	  REFERENCES "SYS"."TRANSFORMATIONS$" ("TRANSFORMATION_ID") ON DELETE CASCADE DISABLE;

@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table SCHEDULER$_CHAIN
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SCHEDULER$_CHAIN" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"RULE_SET" VARCHAR2(128 BYTE), 
+	"RULE_SET_OWNER" VARCHAR2(128 BYTE), 
+	"COMMENTS" VARCHAR2(4000 BYTE), 
+	"EVAL_INTERVAL" INTERVAL DAY (3) TO SECOND (0), 
+	"FLAGS" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

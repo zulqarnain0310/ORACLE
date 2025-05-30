@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table WRI$_ADV_SQLA_STMTS
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRI$_ADV_SQLA_STMTS" SHARING=METADATA 
+   (	"TASK_ID" NUMBER, 
+	"WORKLOAD_ID" NUMBER, 
+	"STMT_ID" NUMBER, 
+	"SQL_ID" VARCHAR2(13 BYTE), 
+	"PRE_COST" NUMBER, 
+	"POST_COST" NUMBER, 
+	"IMP" NUMBER, 
+	"REC_ID" NUMBER, 
+	"VALIDATED" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

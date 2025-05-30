@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table RADM_PE$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."RADM_PE$" MODIFY ("PE_PEXPR" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."RADM_PE$" MODIFY ("PE_VERSION" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."RADM_PE$" MODIFY ("PE_COMPAT" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."RADM_PE$" ADD PRIMARY KEY ("PE#")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM"  ENABLE;

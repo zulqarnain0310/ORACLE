@@ -1,0 +1,25 @@
+--------------------------------------------------------
+--  DDL for Table COLLECTION$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."COLLECTION$" SHARING=METADATA 
+   (	"TOID" RAW(16), 
+	"VERSION#" NUMBER, 
+	"COLL_TOID" RAW(16), 
+	"COLL_VERSION#" NUMBER, 
+	"ELEM_TOID" RAW(16), 
+	"ELEM_VERSION#" NUMBER, 
+	"SYNOBJ#" NUMBER, 
+	"PROPERTIES" NUMBER, 
+	"CHARSETID" NUMBER, 
+	"CHARSETFORM" NUMBER, 
+	"LENGTH" NUMBER, 
+	"PRECISION" NUMBER, 
+	"SCALE" NUMBER, 
+	"UPPER_BOUND" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"PACKAGE_OBJ#" NUMBER, 
+	"COLL_NAME" VARCHAR2(128 BYTE)
+   ) CLUSTER "SYS"."C_TOID_VERSION#" ("TOID", "VERSION#");

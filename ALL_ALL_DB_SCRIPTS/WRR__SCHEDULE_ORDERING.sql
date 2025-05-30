@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Table WRR$_SCHEDULE_ORDERING
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."WRR$_SCHEDULE_ORDERING" SHARING=METADATA 
+   (	"SCHEDULE_NAME" VARCHAR2(128 BYTE), 
+	"SCHEDULE_CAP_ID" NUMBER, 
+	"WAITFOR_CAP_ID" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSAUX" ;

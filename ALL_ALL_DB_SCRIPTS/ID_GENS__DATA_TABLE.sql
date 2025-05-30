@@ -1,0 +1,3 @@
+REM INSERTING into SYS.ID_GENS$
+SET DEFINE OFF;
+Insert into SYS.ID_GENS$ (TOTAL) values (1);

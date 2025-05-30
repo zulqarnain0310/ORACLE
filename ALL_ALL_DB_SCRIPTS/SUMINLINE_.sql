@@ -1,0 +1,20 @@
+--------------------------------------------------------
+--  DDL for Table SUMINLINE$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SUMINLINE$" SHARING=METADATA 
+   (	"SUMOBJ#" NUMBER, 
+	"INLINE#" NUMBER, 
+	"TEXTSPOS" NUMBER, 
+	"TEXTLEN" NUMBER, 
+	"TEXT" LONG, 
+	"HASHVAL" NUMBER, 
+	"QBCID" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(1000 BYTE), 
+	"SPARE4" DATE, 
+	"INSTANCE#" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

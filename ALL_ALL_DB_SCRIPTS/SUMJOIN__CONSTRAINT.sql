@@ -1,0 +1,10 @@
+--------------------------------------------------------
+--  Constraints for Table SUMJOIN$
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."SUMJOIN$" MODIFY ("SUMOBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMJOIN$" MODIFY ("TAB1OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMJOIN$" MODIFY ("TAB1COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMJOIN$" MODIFY ("TAB2OBJ#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMJOIN$" MODIFY ("TAB2COL#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."SUMJOIN$" MODIFY ("QBCID" NOT NULL ENABLE);

@@ -1,0 +1,11 @@
+--------------------------------------------------------
+--  DDL for Package SDO_RDF_EXP_IMP
+--------------------------------------------------------
+
+  CREATE OR REPLACE NONEDITIONABLE PACKAGE "SYS"."SDO_RDF_EXP_IMP" 
+
+/
+
+  GRANT EXECUTE ON "SYS"."SDO_RDF_EXP_IMP" TO "DATAPUMP_EXP_FULL_DATABASE";
+  GRANT EXECUTE ON "SYS"."SDO_RDF_EXP_IMP" TO "DATAPUMP_IMP_FULL_DATABASE";
+  GRANT EXECUTE ON "SYS"."SDO_RDF_EXP_IMP" TO "EXECUTE_CATALOG_ROLE";

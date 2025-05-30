@@ -1,0 +1,16 @@
+--------------------------------------------------------
+--  DDL for Table PENDING_SESSIONS$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."PENDING_SESSIONS$" SHARING=METADATA 
+   (	"LOCAL_TRAN_ID" VARCHAR2(22 BYTE), 
+	"SESSION_ID" NUMBER(*,0), 
+	"BRANCH_ID" RAW(64), 
+	"INTERFACE" VARCHAR2(1 BYTE), 
+	"TYPE#" NUMBER, 
+	"PARENT_DBID" VARCHAR2(16 BYTE), 
+	"PARENT_DB" VARCHAR2(128 BYTE), 
+	"DB_USERID" NUMBER(*,0)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

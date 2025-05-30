@@ -1,0 +1,14 @@
+--------------------------------------------------------
+--  DDL for Table SYS_FBA_PERIOD
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."SYS_FBA_PERIOD" SHARING=METADATA 
+   (	"OBJ#" NUMBER, 
+	"PERIODNAME" VARCHAR2(255 BYTE), 
+	"FLAGS" NUMBER, 
+	"PERIODSTART" VARCHAR2(255 BYTE), 
+	"PERIODEND" VARCHAR2(255 BYTE), 
+	"SPARE" NUMBER
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

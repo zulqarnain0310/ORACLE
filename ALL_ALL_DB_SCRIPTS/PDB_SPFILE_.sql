@@ -1,0 +1,17 @@
+--------------------------------------------------------
+--  DDL for Table PDB_SPFILE$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."PDB_SPFILE$" SHARING=METADATA 
+   (	"DB_UNIQ_NAME" VARCHAR2(30 BYTE), 
+	"PDB_UID" NUMBER, 
+	"SID" VARCHAR2(80 BYTE), 
+	"NAME" VARCHAR2(80 BYTE), 
+	"VALUE$" VARCHAR2(4000 BYTE), 
+	"COMMENT$" VARCHAR2(255 BYTE), 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" VARCHAR2(128 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;

@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  Constraints for Table GOLDENGATE$_CONTAINER_RULES
+--------------------------------------------------------
+
+  ALTER TABLE "SYS"."GOLDENGATE$_CONTAINER_RULES" MODIFY ("RULE#" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."GOLDENGATE$_CONTAINER_RULES" MODIFY ("CAPTURE_NAME" NOT NULL ENABLE);
+  ALTER TABLE "SYS"."GOLDENGATE$_CONTAINER_RULES" MODIFY ("FILTER_RULE" NOT NULL ENABLE);

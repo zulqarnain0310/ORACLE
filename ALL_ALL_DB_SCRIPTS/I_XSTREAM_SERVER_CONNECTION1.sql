@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index I_XSTREAM_SERVER_CONNECTION1
+--------------------------------------------------------
+
+  CREATE INDEX "SYS"."I_XSTREAM_SERVER_CONNECTION1" ON "SYS"."XSTREAM$_SERVER_CONNECTION" ("OUTBOUND_SERVER", "INBOUND_SERVER", "INBOUND_SERVER_DBLINK") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "SYSTEM" ;

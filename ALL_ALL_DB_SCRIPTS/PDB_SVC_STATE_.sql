@@ -1,0 +1,19 @@
+--------------------------------------------------------
+--  DDL for Table PDB_SVC_STATE$
+--------------------------------------------------------
+
+  CREATE TABLE "SYS"."PDB_SVC_STATE$" SHARING=METADATA 
+   (	"INST_ID" NUMBER, 
+	"INST_NAME" VARCHAR2(128 BYTE), 
+	"PDB_GUID" RAW(16), 
+	"PDB_UID" NUMBER, 
+	"SVC_HASH" NUMBER, 
+	"SPARE1" NUMBER, 
+	"SPARE2" NUMBER, 
+	"SPARE3" NUMBER, 
+	"SPARE4" NUMBER, 
+	"SPARE5" VARCHAR2(4000 BYTE), 
+	"SPARE6" VARCHAR2(4000 BYTE)
+   ) PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 
+ NOCOMPRESS LOGGING
+  TABLESPACE "SYSTEM" ;
