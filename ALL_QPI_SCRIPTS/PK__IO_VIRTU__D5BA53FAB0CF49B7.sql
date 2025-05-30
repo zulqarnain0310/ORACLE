@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index PK__IO_VIRTU__D5BA53FAB0CF49B7
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "QPI_RBL_MISDB_PROD"."PK__IO_VIRTU__D5BA53FAB0CF49B7" ON "QPI_RBL_MISDB_PROD"."IO_VIRTUAL_FILE_STATS_SNAPSHOT" ("DATABASE_ID", "FILE_ID") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;

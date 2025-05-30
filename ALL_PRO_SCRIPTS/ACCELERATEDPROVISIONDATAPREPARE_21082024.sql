@@ -1,0 +1,304 @@
+--------------------------------------------------------
+--  DDL for Procedure ACCELERATEDPROVISIONDATAPREPARE_21082024
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" /*==============================                      
+Author : TRILOKI KHANNA               
+CREATE DATE : 27-11-2019                      
+MODIFY DATE : 27-11-2019                     
+DESCRIPTION : UPDATE TOTAL PROVISION                      
+--EXEC [pro].[UpdationTotalProvision] @TimeKey =25410                        
+=========================================*/
+(
+  ----Declare             
+  v_TimeKey IN NUMBER DEFAULT 26357 ,
+  v_BackDtdProcess IN CHAR DEFAULT 'Y' 
+)
+AS
+
+BEGIN
+
+   BEGIN
+      DECLARE
+         /*UPDATE PROISION ALT KEY FOR NPA (SUB) ACCOUNT AS PER SEGMENT UNSCURED - RETAIL, MSME AND MICRO  ON THE BASES OF NPA QTR NO */
+         /* prepare NPA Qtr No */
+         v_ProcessDate VARCHAR2(200) := ( SELECT DATE_ 
+           FROM SYSDAYMATRIX 
+          WHERE  TIMEKEY = v_TimeKey );
+         v_CurQtrDate VARCHAR2(200);
+         v_LastQtrDate VARCHAR2(200);
+         v_LastToLastQtrDate VARCHAR2(200);
+         v_LastToLastToLastQtrDate VARCHAR2(200);
+
+      BEGIN
+         EXECUTE IMMEDIATE ' TRUNCATE TABLE PRO_RBL_MISDB_PROD.AcceleratedProvCalc ';
+         SELECT CurQtrDate ,
+                LastQtrDate ,
+                LastToLastQtrDate 
+
+           INTO v_CurQtrDate,
+                v_LastQtrDate,
+                v_LastToLastQtrDate
+           FROM SYSDAYMATRIX 
+          WHERE  TIMEKEY = v_TimeKey;
+         v_LastToLastToLastQtrDate := EOMONTH(utils.dateadd('MM', -3, v_LastToLastQtrDate)) ;
+         IF  --SQLDEV: NOT RECOGNIZED
+         IF tt_AC_NPA_QTR_NO_6  --SQLDEV: NOT RECOGNIZED
+         DELETE FROM tt_AC_NPA_QTR_NO_6;
+         UTILS.IDENTITY_RESET('tt_AC_NPA_QTR_NO_6');
+
+         INSERT INTO tt_AC_NPA_QTR_NO_6 ( 
+         	SELECT A.UcifEntityID ,
+                 A.CustomerEntityID ,
+                 A.AccountEntityID ,
+                 FinalAssetClassAlt_Key ,
+                 PROV.ProvisionAlt_Key ,
+                 ProvisionSecured ,
+                 ProvisionUnSecured ,
+                 Prov.Segment ,
+                 ProvisionRule ,
+                 LowerDPD ,
+                 UpperDPD ,
+                 CASE 
+                      WHEN FinalNpaDt BETWEEN utils.dateadd('DD', 1, v_LastQtrDate) AND v_CurQtrDate THEN 'Q1'
+                      WHEN FinalNpaDt BETWEEN utils.dateadd('DD', 1, v_LastToLastQtrDate) AND v_LastQtrDate THEN 'Q2'
+                      WHEN FinalNpaDt BETWEEN utils.dateadd('DD', 1, v_LastToLastToLastQtrDate) AND v_LastToLastQtrDate THEN 'Q3'
+                 ELSE 'Q4'
+                    END NPA_QTR_NO  ,
+                 Seg.AcBuRevisedSegmentCode ,
+                 CASE 
+                      WHEN SecApp = 'S' THEN 'Secured'
+                 ELSE 'UnSecured'
+                    END SecuredUnsecured  
+         	  FROM PRO_RBL_MISDB_PROD.AccountCal_Hist A
+                   LEFT JOIN DimAcBuSegment SEG   ON SEG.AcBuSegmentCode = A.ActSegmentCode
+                   AND ( SEG.EffectiveFromTimeKey <= v_TimeKey
+                   AND SEG.EffectiveToTimeKey >= v_TimeKey )
+                   JOIN DImprovision_Seg prov   ON PROV.EffectiveFromTimeKey <= v_TimeKey
+                   AND Prov.EffectiveToTimekey >= v_TimeKey
+                   AND Prov.ProvisionAlt_Key = A.ProvisionAlt_Key
+         	 WHERE  FinalAssetClassAlt_Key > 1
+                    AND NVL(WriteOffAmount, 0) = 0
+                    AND A.EffectiveFromTimeKey <= v_TimeKey
+                    AND A.EffectiveToTimekey >= v_TimeKey );
+         --select * from tt_AC_NPA_QTR_NO_6            
+         /* FILTER ACCOUNT LEVEL PROVISION */
+         INSERT INTO PRO_RBL_MISDB_PROD.AcceleratedProvCalc
+           ( SELECT A.DateApproved ,
+                    C.UcifEntityID ,
+                    B.CustomerEntityID ,
+                    B.AccountEntityId ,
+                    AcceProDuration ,
+                    Secured_Unsecured ,
+                    CASE 
+                         WHEN NVL(AdditionalProvAcct, 0) > 0 THEN 'ACCT'
+                    ELSE 'CUSTUCIF'
+                       END ProvTypes  ,
+                    AdditionalProvAcct ,
+                    AdditionalProvision ,
+                    CurrentProvisionPer ,
+                    ProvisionSecured ,
+                    ProvisionUnSecured ,
+                    NPA_QTR_NO ,
+                    Segment ,
+                    ProvisionRule ,
+                    LowerDPD ,
+                    UpperDPD ,
+                    v_TimeKey TimeKey  ,
+                    0 AcclrtdAddlprov  ,
+                    NULL BucketCreditCard  ,
+                    NULL BucketExceptCC  
+             FROM AcceleratedProvision A
+                    JOIN AdvAcBasicDetail B   ON A.AccountId = B.CustomerACID
+                    AND b.EffectiveFromTimeKey <= v_TimeKey
+                    AND b.EffectiveToTimeKey >= v_TimeKey
+                    JOIN CustomerBasicDetail C   ON C.CustomerEntityId = B.CustomerEntityId
+                    AND c.EffectiveFromTimeKey <= v_TimeKey
+                    AND c.EffectiveToTimeKey >= v_TimeKey
+                    JOIN tt_AC_NPA_QTR_NO_6 D   ON D.AccountEntityID = b.AccountEntityId
+              WHERE  EffectiveDate <= v_ProcessDate
+                       AND ( ( A.EffectiveFromTimeKey >= v_TimeKey
+                       AND A.EffectiveToTimeKey >= v_TimeKey -- and @BackDtdProcess='Y' commented by Mandeep (18042023)Backdated accelerated provision impact
+                      )
+                       OR ( A.EffectiveFromTimeKey <= v_TimeKey
+                       AND A.EffectiveToTimeKey >= v_TimeKey --and @BackDtdProcess='N' commented by Mandeep (18042023)Backdated accelerated provision impact
+                      ) )
+             UNION 
+
+             --UNION ALL--            
+
+             --/* FILTER UCIF/CUSTOMER LEVEL PROVISION */            
+
+             --SELECT A.DateApproved,B.UcifEntityID,B.CustomerEntityID,B.AccountEntityId,AcceProDuration,Secured_Unsecured, 'CUSTUCIF' ProvTypes, 0 AdditionalProvAcct,A.AdditionalProvision            
+
+             --  ,0 CurrentProvisionPer,ProvisionSecured             
+
+             --FROM AcceleratedProvision A             
+
+             -- INNER JOIN tt_AC_NPA_QTR_NO_6 B            
+
+             --  ON A.CustomerEntityID=B.CustomerEntityID            
+
+             --WHERE ISNULL(AdditionalProvAcct,0)=0 AND EffectiveDate>=@ProcessDate            
+
+             --  AND A.EffectiveFromTimeKey>=@TimeKey  AND EffectiveToTimeKey>=@TimeKey            
+
+             ----BUCKET WISE PROVISION            
+             SELECT a.DateApproved ,
+                    b.UcifEntityId ,
+                    B.CustomerEntityID ,
+                    b.AccountEntityId ,
+                    AcceProDuration ,
+                    Secured_Unsecured ,
+                    'Bucket' ProvTypes  ,
+                    0 AdditionalProvAcct  ,
+                    a.AdditionalProvision ,
+                    CurrentProvisionPer ,
+                    ProvisionSecured ,
+                    ProvisionUnSecured ,
+                    NPA_QTR_NO ,
+                    Segment ,
+                    ProvisionRule ,
+                    LowerDPD ,
+                    UpperDPD ,
+                    v_TimeKey TimeKey  ,
+                    0 AcclrtdAddlprov  ,
+                    A.BucketCreditCard ,
+                    BucketExceptCC 
+             FROM BucketWiseAcceleratedProvision A
+                    JOIN tt_AC_NPA_QTR_NO_6 b   ON A.SegmentName = B.AcBuRevisedSegmentCode
+                    AND A.Secured_Unsecured = B.SecuredUnsecured
+                    AND NVL(A.AssetClassNameAlt_key, B.FinalAssetClassAlt_Key) = b.FinalAssetClassAlt_Key
+                    AND NVL(A.BucketExceptCC, B.NPA_QTR_NO) = B.NPA_QTR_NO
+              WHERE  A.SegmentName <> 'CREDIT CARD'
+                       AND EffectiveDate <= v_ProcessDate
+                       AND ( ( A.EffectiveFromTimeKey >= v_TimeKey
+                       AND A.EffectiveToTimeKey >= v_TimeKey -- and @BackDtdProcess='Y' commented by Mandeep (18042023)Backdated accelerated provision impact
+                      )
+                       OR ( A.EffectiveFromTimeKey <= v_TimeKey
+                       AND A.EffectiveToTimeKey >= v_TimeKey -- and @BackDtdProcess='N' commented by Mandeep (18042023)Backdated accelerated provision impact
+                      ) )
+             UNION 
+             SELECT a.DateApproved ,
+                    b.UcifEntityId ,
+                    B.CustomerEntityID ,
+                    b.AccountEntityId ,
+                    AcceProDuration ,
+                    Secured_Unsecured ,
+                    'Bucket' ProvTypes  ,
+                    0 AdditionalProvAcct  ,
+                    a.AdditionalProvision ,
+                    CurrentProvisionPer ,
+                    ProvisionSecured ,
+                    ProvisionUnSecured ,
+                    NPA_QTR_NO ,
+                    Segment ,
+                    ProvisionRule ,
+                    LowerDPD ,
+                    UpperDPD ,
+                    v_TimeKey TimeKey  ,
+                    0 AcclrtdAddlprov  ,
+                    A.BucketCreditCard ,
+                    BucketExceptCC 
+             FROM BucketWiseAcceleratedProvision A
+                    JOIN tt_AC_NPA_QTR_NO_6 b   ON A.SegmentName = B.AcBuRevisedSegmentCode
+                    AND A.Secured_Unsecured = B.SecuredUnsecured
+                    AND A.AssetClassNameAlt_key = b.FinalAssetClassAlt_Key
+                    AND A.BucketCreditCard = CASE 
+                                                  WHEN B.ProvisionRule = 'K/W/E/U'
+                                                    AND B.LowerDPD = 0
+                                                    AND UpperDPD = 89 THEN 'DPD 0-89 - bc2'
+                                                  WHEN B.ProvisionRule = 'OTHERS/BLANK'
+                                                    AND B.LowerDPD = 0
+                                                    AND UpperDPD = 89 THEN 'DPD 0-89 - Other'
+                                                  WHEN B.ProvisionRule IN ( 'K/W/E/U' )
+
+                                                    AND B.LowerDPD = 90
+                                                    AND UpperDPD = 179 THEN 'DPD 90'
+                                                  WHEN B.ProvisionRule IN ( 'OTHERS/BLANK' )
+
+                                                    AND B.LowerDPD = 90
+                                                    AND UpperDPD = 179 THEN 'DPD 90 - Other'   END
+
+             --WHEN B.ProvisionRule in('OTHERS/BLANK','K/W/E/U') AND B.LowerDPD=180 AND UpperDPD=9999 THEN 'DPD 180+'            
+             WHERE  A.SegmentName = 'CREDIT CARD'
+                      AND B.Segment = 'CREDIT CARD'
+                      AND EffectiveDate <= v_ProcessDate
+                      AND ( ( A.EffectiveFromTimeKey >= v_TimeKey
+                      AND A.EffectiveToTimeKey >= v_TimeKey -- and @BackDtdProcess='Y' commented by Mandeep (18042023)Backdated accelerated provision impact
+                     )
+                      OR ( A.EffectiveFromTimeKey <= v_TimeKey
+                      AND A.EffectiveToTimeKey >= v_TimeKey ) ) );-- and @BackDtdProcess='N' commented by Mandeep (18042023)Backdated accelerated provision impact
+         /*DELETE DUP DATE - USE LATTEST ROW (MAX ENTITYKEY) */
+         WITH Cte_Prov AS ( SELECT * ,
+                                   ROW_NUMBER() OVER ( PARTITION BY AccountEntityId ORDER BY AccountEntityId, DateApproved DESC  ) RID  
+           FROM PRO_RBL_MISDB_PROD.AcceleratedProvCalc  ) 
+            DELETE Cte_Prov
+
+             WHERE  RID > 1
+            ;
+
+      END;
+   EXCEPTION
+      WHEN OTHERS THEN
+
+   BEGIN
+      UPDATE PRO_RBL_MISDB_PROD.AclRunningProcessStatus
+         SET COMPLETED = 'N',
+             ERRORDATE = SYSDATE,
+             ERRORDESCRIPTION = SQLERRM,
+             COUNT = NVL(COUNT, 0) + 1
+       WHERE  RUNNINGPROCESSNAME = 'UpdationTotalProvision';
+
+   END;END;
+
+EXCEPTION WHEN OTHERS THEN utils.handleerror(SQLCODE,SQLERRM);
+END;
+
+/
+
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ROLE_LOCAL_RBL_MISDB_PROD_ORACLE";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "PREMOC_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "QPI_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ALERT_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "DWH_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "D2KMNTR_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "CURDAT_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "BS_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ACL_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ETL_MAIN_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "DATAUPLOAD_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ROLE_LOCAL_RBL_MISDB_PROD_ORACLE";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "PREMOC_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "QPI_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ALERT_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "DWH_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "D2KMNTR_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "CURDAT_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "BS_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ACL_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ETL_MAIN_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "DATAUPLOAD_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ROLE_ALL_DB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "CC_CDR_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_BI_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "BSG_READ_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "STD_FIN_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ETL_TEMP_RBL_TEMPDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_TEMPDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "STG_FIN_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ADF_CDR_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ROLE_ALL_DB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "CC_CDR_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_BI_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "BSG_READ_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "STD_FIN_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ETL_TEMP_RBL_TEMPDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "RBL_TEMPDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "STG_FIN_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."ACCELERATEDPROVISIONDATAPREPARE_21082024" TO "ADF_CDR_RBL_STGDB";

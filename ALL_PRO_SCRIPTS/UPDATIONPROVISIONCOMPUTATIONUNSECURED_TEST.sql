@@ -1,0 +1,193 @@
+--------------------------------------------------------
+--  DDL for Procedure UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE EDITIONABLE PROCEDURE "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" /*=====================================
+AUTHER : TRILOKI KHANNA 
+CREATE DATE : 27-11-2019
+MODIFY DATE : 27-11-2019
+DESCRIPTION : Updation Provision Computation UnSecured
+EXEC pro.UpdationProvisionComputationUnSecured  @TIMEKEY=25410 
+====================================*/
+(
+  v_TimeKey IN NUMBER
+)
+AS
+
+BEGIN
+
+   BEGIN
+
+      BEGIN
+         UPDATE PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST
+            SET PROVUNSECURED = 0,
+                BANKPROVUNSECURED = 0,
+                RBIPROVUNSECURED = 0;
+         MERGE INTO A 
+         USING (SELECT A.ROWID row_id, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN ((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))))
+         ELSE 0
+            END) AS pos_2, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN (((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0)))) * CASE 
+                                                                                                                                                                                 WHEN D.PROVISIONNAME = 'Corporate Common' THEN NVL(A.ProvPerUnSecured, 0)
+         ELSE NVL(D.PROVISIONUNSECURED, 0) / 100
+            END)
+         ELSE 0
+            END) AS pos_3, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN (((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0)))) * CASE 
+                                                                                                                                                                                 WHEN D.PROVISIONNAME = 'Corporate Common' THEN NVL(A.ProvPerUnSecured, 0)
+         ELSE NVL(D.PROVISIONUNSECURED, 0) / 100
+            END)
+         ELSE 0
+            END) AS pos_4, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN (((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0)))) * NVL(D.RBIPROVISIONUNSECURED, 0) / 100)
+         ELSE 0
+            END) AS pos_5
+         FROM A ,PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST A
+              ---INNER JOIN PRO.CUSTOMERCAL_test B ON A.CUSTOMERENTITYID=B.CUSTOMERENTITYID
+
+                JOIN RBL_MISDB_PROD.DimProvision_Seg D   ON D.EFFECTIVEFROMTIMEKEY <= v_TIMEKEY
+                AND D.EFFECTIVETOTIMEKEY >= v_TIMEKEY
+                AND NVL(A.ProvisionAlt_Key, 1) = D.PROVISIONALT_KEY ----ISNULL(B.FLGPROCESSING,'N') ='N'  and
+
+          WHERE FINALASSETCLASSALT_KEY > 1) src
+         ON ( A.ROWID = src.row_id )
+         WHEN MATCHED THEN UPDATE SET A.UNSECUREDAMT = pos_2,
+                                      A.PROVUNSECURED = pos_3,
+                                      A.BANKPROVUNSECURED = pos_4,
+                                      A.RBIPROVUNSECURED = pos_5;
+         MERGE INTO A 
+         USING (SELECT A.ROWID row_id, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN ((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))))
+         ELSE 0
+            END) AS pos_2, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN (((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0)))) * CASE 
+                                                                                                                                                                                 WHEN D.PROVISIONNAME = 'Corporate Common' THEN NVL(A.ProvPerUnSecured, 0)
+         ELSE NVL(D.PROVISIONUNSECURED, 0) / 100
+            END)
+         ELSE 0
+            END) AS pos_3, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN (((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0)))) * CASE 
+                                                                                                                                                                                 WHEN D.PROVISIONNAME = 'Corporate Common' THEN NVL(A.ProvPerUnSecured, 0)
+         ELSE NVL(D.PROVISIONUNSECURED, 0) / 100
+            END)
+         ELSE 0
+            END) AS pos_4, (CASE 
+         WHEN (NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0))) > 0 THEN (((NVL(A.NetBalance, 0) - (NVL(A.SecuredAmt, 0) + NVL(A.CoverGovGur, 0)))) * NVL(D.RBIPROVISIONUNSECURED, 0) / 100)
+         ELSE 0
+            END) AS pos_5
+         FROM A ,PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST A
+              ------INNER JOIN PRO.CUSTOMERCAL_test B ON A.CUSTOMERENTITYID=B.CUSTOMERENTITYID
+
+                JOIN RBL_MISDB_PROD.DimProvision_SegStd D   ON D.EFFECTIVEFROMTIMEKEY <= v_TIMEKEY
+                AND D.EFFECTIVETOTIMEKEY >= v_TIMEKEY
+                AND NVL(A.ProvisionAlt_Key, 1) = D.PROVISIONALT_KEY -------ISNULL(B.FLGPROCESSING,'N') ='N' and 
+
+          WHERE FinalAssetClassAlt_Key = 1) src
+         ON ( A.ROWID = src.row_id )
+         WHEN MATCHED THEN UPDATE SET A.UNSECUREDAMT = pos_2,
+                                      A.PROVUNSECURED = pos_3,
+                                      A.BANKPROVUNSECURED = pos_4,
+                                      A.RBIPROVUNSECURED = pos_5;
+         --------update PRO.ACCOUNTCAL_test set SecuredAmt=NetBalance from PRO.ACCOUNTCAL_test
+         --------where FinalAssetClassAlt_Key=1
+         --------and isnull(SecurityValue,0)>0 
+         --------and (isnull(SecuredAmt,0)=0)
+         --------and SecurityValue>NetBalance
+         --------update PRO.ACCOUNTCAL_test set SecuredAmt=NetBalance from PRO.ACCOUNTCAL_test
+         --------where FinalAssetClassAlt_Key=1
+         --------and isnull(NetBalance,0)>0 and isnull(SecurityValue,0)>0 and isnull(SecuredAmt,0)=0
+         --------and isnull(SecurityValue,0)>=isnull(NetBalance,0)
+         --------update PRO.ACCOUNTCAL_test set SecuredAmt=SecurityValue from PRO.ACCOUNTCAL_test
+         --------where FinalAssetClassAlt_Key=1
+         --------and isnull(NetBalance,0)>0 and isnull(SecurityValue,0)>0 and isnull(SecuredAmt,0)=0
+         --------and isnull(SecurityValue,0)<=isnull(NetBalance,0)
+         --------update PRO.ACCOUNTCAL_test set UnSecuredAmt=NetBalance-(SecuredAmt+UnSecuredAmt)
+         -------- from PRO.ACCOUNTCAL_test
+         --------where FinalAssetClassAlt_Key=1
+         --------and isnull(NetBalance,0)>0 and isnull(NetBalance,0)-(isnull(SecuredAmt,0)+isnull(UnSecuredAmt,0))<>0
+         UPDATE PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST
+            SET UNSECUREDAMT = 0
+          WHERE  NVL(UNSECUREDAMT, 0) <= 0;
+         UPDATE PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST
+            SET PROVUNSECURED = 0
+          WHERE  NVL(PROVUNSECURED, 0) <= 0;
+         UPDATE PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST
+            SET BANKPROVUNSECURED = 0
+          WHERE  NVL(BANKPROVUNSECURED, 0) <= 0;
+         UPDATE PRO_RBL_MISDB_PROD.ACCOUNTCAL_TEST
+            SET RBIPROVUNSECURED = 0
+          WHERE  NVL(RBIPROVUNSECURED, 0) <= 0;
+         -----------------Added for DashBoard 04-03-2021
+         --Update BANDAUDITSTATUS set CompletedCount=CompletedCount+1 where BandName='ASSET CLASSIFICATION'
+         UPDATE PRO_RBL_MISDB_PROD.AclRunningProcessStatus_TEST
+            SET COMPLETED = 'Y',
+                ERRORDATE = NULL,
+                ERRORDESCRIPTION = NULL,
+                COUNT = NVL(COUNT, 0) + 1
+          WHERE  RUNNINGPROCESSNAME = 'UpdationProvisionComputationUnSecured';
+
+      END;
+   EXCEPTION
+      WHEN OTHERS THEN
+
+   BEGIN
+      UPDATE PRO_RBL_MISDB_PROD.AclRunningProcessStatus_TEST
+         SET COMPLETED = 'N',
+             ERRORDATE = SYSDATE,
+             ERRORDESCRIPTION = SQLERRM,
+             COUNT = NVL(COUNT, 0) + 1
+       WHERE  RUNNINGPROCESSNAME = 'UpdationProvisionComputationUnSecured';
+
+   END;END;
+
+EXCEPTION WHEN OTHERS THEN utils.handleerror(SQLCODE,SQLERRM);
+END;
+
+/
+
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ROLE_LOCAL_RBL_MISDB_PROD_ORACLE";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "PREMOC_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "QPI_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ALERT_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "DWH_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "D2KMNTR_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "CURDAT_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "BS_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ACL_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ETL_MAIN_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "DATAUPLOAD_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ROLE_LOCAL_RBL_MISDB_PROD_ORACLE";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "PREMOC_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "QPI_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ALERT_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "DWH_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "D2KMNTR_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "CURDAT_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "BS_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ACL_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ETL_MAIN_RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_MISDB_PROD";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "DATAUPLOAD_RBL_MISDB_PROD";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ROLE_ALL_DB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "CC_CDR_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_BI_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "BSG_READ_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "STD_FIN_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ETL_TEMP_RBL_TEMPDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_TEMPDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "STG_FIN_RBL_STGDB";
+  GRANT EXECUTE ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ADF_CDR_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ROLE_ALL_DB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "CC_CDR_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_BI_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "BSG_READ_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "STD_FIN_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ETL_TEMP_RBL_TEMPDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "RBL_TEMPDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "STG_FIN_RBL_STGDB";
+  GRANT DEBUG ON "MAIN_PRO"."UPDATIONPROVISIONCOMPUTATIONUNSECURED_TEST" TO "ADF_CDR_RBL_STGDB";

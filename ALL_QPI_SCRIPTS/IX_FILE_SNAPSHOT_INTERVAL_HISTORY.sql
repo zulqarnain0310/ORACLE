@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index IX_FILE_SNAPSHOT_INTERVAL_HISTORY
+--------------------------------------------------------
+
+  CREATE INDEX "QPI_RBL_MISDB_PROD"."IX_FILE_SNAPSHOT_INTERVAL_HISTORY" ON "QPI_RBL_MISDB_PROD"."IO_VIRTUAL_FILE_STATS_SNAPSHOT_HISTORY" ("END_TIME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;

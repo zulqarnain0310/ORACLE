@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index IX_OS_WAIT_STATS_SNAPSHOT_HISTORY
+--------------------------------------------------------
+
+  CREATE INDEX "QPI_RBL_MISDB_PROD"."IX_OS_WAIT_STATS_SNAPSHOT_HISTORY" ON "QPI_RBL_MISDB_PROD"."OS_WAIT_STATS_SNAPSHOT_HISTORY" ("START_TIME", "END_TIME") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;

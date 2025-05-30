@@ -1,0 +1,7 @@
+--------------------------------------------------------
+--  DDL for Index PK__OS_PERFO__DFE47B6FE496E1BC
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "QPI_RBL_MISDB_PROD"."PK__OS_PERFO__DFE47B6FE496E1BC" ON "QPI_RBL_MISDB_PROD"."OS_PERFORMANCE_COUNTERS_SNAPSHOT" ("NAME", "OBJECT", "INSTANCE_NAME", "TYPE") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  TABLESPACE "USERS" ;
